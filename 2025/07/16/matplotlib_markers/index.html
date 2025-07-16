@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.halunhaku.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":false,"lazyload":false,"nav":null,"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"path":"search.json"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="Matplotlib Markers 完整指南简介Matplotlib 中的 markers（标记）是数据可视化中的重要组成部分，用于在图表中标识数据点。markers 功能广泛应用于 plot()、scatter() 和 errorbar() 等函数中，帮助用户创建更直观、更具表现力的图表。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matplotlib Markers 完整指南">
+<meta property="og:url" content="https://blog.halunhaku.top/2025/07/16/matplotlib_markers/index.html">
+<meta property="og:site_name" content="halunhaku&#39;s blog">
+<meta property="og:description" content="Matplotlib Markers 完整指南简介Matplotlib 中的 markers（标记）是数据可视化中的重要组成部分，用于在图表中标识数据点。markers 功能广泛应用于 plot()、scatter() 和 errorbar() 等函数中，帮助用户创建更直观、更具表现力的图表。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-07-16T14:00:00.000Z">
+<meta property="article:modified_time" content="2025-07-16T14:26:57.564Z">
+<meta property="article:author" content="halunhaku">
+<meta property="article:tag" content="Matplotlib">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="数据可视化">
+<meta property="article:tag" content="图表标记">
+<meta property="article:tag" content="markers">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.halunhaku.top/images/avatar.png">
+<meta name="twitter:creator" content="@forhalunhaku">
+<meta name="twitter:site" content="forhalunhaku">
+
+
+<link rel="canonical" href="https://blog.halunhaku.top/2025/07/16/matplotlib_markers/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.halunhaku.top/2025/07/16/matplotlib_markers/","path":"2025/07/16/matplotlib_markers/","title":"Matplotlib Markers 完整指南"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Matplotlib Markers 完整指南 | halunhaku's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6GEJJ4TSF"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V6GEJJ4TSF","only_pageview":false,"measure_protocol_api_secret":"k8muf14OTfWpgFP0TNCcoQ"}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="dns-prefetch" href="https://waline-gamma-lake-91.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">halunhaku's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Matplotlib-Markers-%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97"><span class="nav-number">1.</span> <span class="nav-text">Matplotlib Markers 完整指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC-Markers-%E5%88%97%E8%A1%A8"><span class="nav-number">1.2.</span> <span class="nav-text">基本 Markers 列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E5%92%8C%E5%BD%A2%E7%8A%B6%E6%A0%87%E8%AE%B0"><span class="nav-number">1.2.1.</span> <span class="nav-text">点和形状标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E8%A7%92%E5%BD%A2%E6%A0%87%E8%AE%B0"><span class="nav-number">1.2.2.</span> <span class="nav-text">三角形标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%9D%A1%E5%92%8C%E7%AC%A6%E5%8F%B7%E6%A0%87%E8%AE%B0"><span class="nav-number">1.2.3.</span> <span class="nav-text">线条和符号标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%BB%E5%BA%A6%E6%A0%87%E8%AE%B0"><span class="nav-number">1.2.4.</span> <span class="nav-text">刻度标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E7%AC%A6%E5%8F%B7%E6%A0%87%E8%AE%B0"><span class="nav-number">1.2.5.</span> <span class="nav-text">插入符号标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E6%A0%87%E8%AE%B0"><span class="nav-number">1.2.6.</span> <span class="nav-text">特殊标记</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7-Markers-%E5%8A%9F%E8%83%BD"><span class="nav-number">1.3.</span> <span class="nav-text">高级 Markers 功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%B7%AF%E5%BE%84%E6%A0%87%E8%AE%B0"><span class="nav-number">1.3.1.</span> <span class="nav-text">自定义路径标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%A4%9A%E8%BE%B9%E5%BD%A2%E6%A0%87%E8%AE%B0"><span class="nav-number">1.3.2.</span> <span class="nav-text">正多边形标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%9F%E5%BD%A2%E6%A0%87%E8%AE%B0"><span class="nav-number">1.3.3.</span> <span class="nav-text">星形标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%9F%E5%8F%B7%E6%A0%87%E8%AE%B0"><span class="nav-number">1.3.4.</span> <span class="nav-text">星号标记</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#STIX-%E6%95%B0%E5%AD%A6%E5%AD%97%E4%BD%93%E7%AC%A6%E5%8F%B7"><span class="nav-number">1.4.</span> <span class="nav-text">STIX 数学字体符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E6%A0%87%E8%AE%B0%E5%AF%B9%E7%85%A7"><span class="nav-number">1.5.</span> <span class="nav-text">数字标记对照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MarkerStyle-%E7%B1%BB"><span class="nav-number">1.6.</span> <span class="nav-text">MarkerStyle 类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.7.</span> <span class="nav-text">实用示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-number">1.7.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%A3%E7%82%B9%E5%9B%BE%E4%B8%AD%E7%9A%84%E6%A0%87%E8%AE%B0"><span class="nav-number">1.7.2.</span> <span class="nav-text">散点图中的标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%A7%8D%E6%A0%87%E8%AE%B0%E7%BB%84%E5%90%88"><span class="nav-number">1.7.3.</span> <span class="nav-text">多种标记组合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">1.8.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.9.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="halunhaku"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">halunhaku</p>
+  <div class="site-description" itemprop="description">halunhaku的博客</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/forhalunhaku" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;forhalunhaku" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:halunhaku@gmail.com" title="E-Mail → mailto:halunhaku@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.halunhaku.top/2025/07/16/matplotlib_markers/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="halunhaku">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="halunhaku's blog">
+      <meta itemprop="description" content="halunhaku的博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Matplotlib Markers 完整指南 | halunhaku's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Matplotlib Markers 完整指南
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-07-16 22:00:00 / 修改时间：22:26:57" itemprop="dateCreated datePublished" datetime="2025-07-16T22:00:00+08:00">2025-07-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">学习记录</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2025/07/16/matplotlib_markers/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2025/07/16/matplotlib_markers/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="Matplotlib-Markers-完整指南"><a href="#Matplotlib-Markers-完整指南" class="headerlink" title="Matplotlib Markers 完整指南"></a>Matplotlib Markers 完整指南</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Matplotlib 中的 markers（标记）是数据可视化中的重要组成部分，用于在图表中标识数据点。markers 功能广泛应用于 <code>plot()</code>、<code>scatter()</code> 和 <code>errorbar()</code> 等函数中，帮助用户创建更直观、更具表现力的图表。</p>
+<span id="more"></span>
+<h2 id="基本-Markers-列表"><a href="#基本-Markers-列表" class="headerlink" title="基本 Markers 列表"></a>基本 Markers 列表</h2><h3 id="点和形状标记"><a href="#点和形状标记" class="headerlink" title="点和形状标记"></a>点和形状标记</h3><table>
+<thead>
+<tr>
+<th>标记符号</th>
+<th>描述</th>
+<th>用法示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>.</code></td>
+<td>点 (point)</td>
+<td><code>plt.plot(x, y, marker=&#39;.&#39;)</code></td>
+</tr>
+<tr>
+<td><code>,</code></td>
+<td>像素 (pixel)</td>
+<td><code>plt.plot(x, y, marker=&#39;,&#39;)</code></td>
+</tr>
+<tr>
+<td><code>o</code></td>
+<td>圆形 (circle)</td>
+<td><code>plt.plot(x, y, marker=&#39;o&#39;)</code></td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>正方形 (square)</td>
+<td><code>plt.plot(x, y, marker=&#39;s&#39;)</code></td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>菱形 (diamond)</td>
+<td><code>plt.plot(x, y, marker=&#39;D&#39;)</code></td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td>细菱形 (thin_diamond)</td>
+<td><code>plt.plot(x, y, marker=&#39;d&#39;)</code></td>
+</tr>
+<tr>
+<td><code>p</code></td>
+<td>五边形 (pentagon)</td>
+<td><code>plt.plot(x, y, marker=&#39;p&#39;)</code></td>
+</tr>
+<tr>
+<td><code>8</code></td>
+<td>八边形 (octagon)</td>
+<td><code>plt.plot(x, y, marker=&#39;8&#39;)</code></td>
+</tr>
+<tr>
+<td><code>h</code></td>
+<td>六边形1 (hexagon1)</td>
+<td><code>plt.plot(x, y, marker=&#39;h&#39;)</code></td>
+</tr>
+<tr>
+<td><code>H</code></td>
+<td>六边形2 (hexagon2)</td>
+<td><code>plt.plot(x, y, marker=&#39;H&#39;)</code></td>
+</tr>
+</tbody></table>
+<h3 id="三角形标记"><a href="#三角形标记" class="headerlink" title="三角形标记"></a>三角形标记</h3><table>
+<thead>
+<tr>
+<th>标记符号</th>
+<th>描述</th>
+<th>用法示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>^</code></td>
+<td>上三角形 (triangle_up)</td>
+<td><code>plt.plot(x, y, marker=&#39;^&#39;)</code></td>
+</tr>
+<tr>
+<td><code>v</code></td>
+<td>下三角形 (triangle_down)</td>
+<td><code>plt.plot(x, y, marker=&#39;v&#39;)</code></td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>左三角形 (triangle_left)</td>
+<td><code>plt.plot(x, y, marker=&#39;&lt;&#39;)</code></td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>右三角形 (triangle_right)</td>
+<td><code>plt.plot(x, y, marker=&#39;&gt;&#39;)</code></td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>下三角 (tri_down)</td>
+<td><code>plt.plot(x, y, marker=&#39;1&#39;)</code></td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td>上三角 (tri_up)</td>
+<td><code>plt.plot(x, y, marker=&#39;2&#39;)</code></td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td>左三角 (tri_left)</td>
+<td><code>plt.plot(x, y, marker=&#39;3&#39;)</code></td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td>右三角 (tri_right)</td>
+<td><code>plt.plot(x, y, marker=&#39;4&#39;)</code></td>
+</tr>
+</tbody></table>
+<h3 id="线条和符号标记"><a href="#线条和符号标记" class="headerlink" title="线条和符号标记"></a>线条和符号标记</h3><table>
+<thead>
+<tr>
+<th>标记符号</th>
+<th>描述</th>
+<th>用法示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>+</code></td>
+<td>加号 (plus)</td>
+<td><code>plt.plot(x, y, marker=&#39;+&#39;)</code></td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>叉号 (x)</td>
+<td><code>plt.plot(x, y, marker=&#39;x&#39;)</code></td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>填充叉号 (x filled)</td>
+<td><code>plt.plot(x, y, marker=&#39;X&#39;)</code></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>星号 (star)</td>
+<td><code>plt.plot(x, y, marker=&#39;*&#39;)</code></td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td>填充加号 (plus filled)</td>
+<td><code>plt.plot(x, y, marker=&#39;P&#39;)</code></td>
+</tr>
+<tr>
+<td>&#96;</td>
+<td>&#96;</td>
+<td>竖线 (vline)</td>
+</tr>
+<tr>
+<td><code>_</code></td>
+<td>横线 (hline)</td>
+<td><code>plt.plot(x, y, marker=&#39;_&#39;)</code></td>
+</tr>
+</tbody></table>
+<h3 id="刻度标记"><a href="#刻度标记" class="headerlink" title="刻度标记"></a>刻度标记</h3><table>
+<thead>
+<tr>
+<th>标记符号</th>
+<th>描述</th>
+<th>用法示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>0</code></td>
+<td>左刻度 (tickleft)</td>
+<td><code>plt.plot(x, y, marker=&#39;0&#39;)</code></td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>右刻度 (tickright)</td>
+<td><code>plt.plot(x, y, marker=&#39;1&#39;)</code></td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td>上刻度 (tickup)</td>
+<td><code>plt.plot(x, y, marker=&#39;2&#39;)</code></td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td>下刻度 (tickdown)</td>
+<td><code>plt.plot(x, y, marker=&#39;3&#39;)</code></td>
+</tr>
+</tbody></table>
+<h3 id="插入符号标记"><a href="#插入符号标记" class="headerlink" title="插入符号标记"></a>插入符号标记</h3><table>
+<thead>
+<tr>
+<th>标记符号</th>
+<th>描述</th>
+<th>用法示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>4</code></td>
+<td>左插入符 (caretleft)</td>
+<td><code>plt.plot(x, y, marker=&#39;4&#39;)</code></td>
+</tr>
+<tr>
+<td><code>5</code></td>
+<td>右插入符 (caretright)</td>
+<td><code>plt.plot(x, y, marker=&#39;5&#39;)</code></td>
+</tr>
+<tr>
+<td><code>6</code></td>
+<td>上插入符 (caretup)</td>
+<td><code>plt.plot(x, y, marker=&#39;6&#39;)</code></td>
+</tr>
+<tr>
+<td><code>7</code></td>
+<td>下插入符 (caretdown)</td>
+<td><code>plt.plot(x, y, marker=&#39;7&#39;)</code></td>
+</tr>
+<tr>
+<td><code>8</code></td>
+<td>左插入符（底部居中）</td>
+<td><code>plt.plot(x, y, marker=&#39;8&#39;)</code></td>
+</tr>
+<tr>
+<td><code>9</code></td>
+<td>右插入符（底部居中）</td>
+<td><code>plt.plot(x, y, marker=&#39;9&#39;)</code></td>
+</tr>
+<tr>
+<td><code>10</code></td>
+<td>上插入符（底部居中）</td>
+<td><code>plt.plot(x, y, marker=&#39;10&#39;)</code></td>
+</tr>
+<tr>
+<td><code>11</code></td>
+<td>下插入符（底部居中）</td>
+<td><code>plt.plot(x, y, marker=&#39;11&#39;)</code></td>
+</tr>
+</tbody></table>
+<h3 id="特殊标记"><a href="#特殊标记" class="headerlink" title="特殊标记"></a>特殊标记</h3><table>
+<thead>
+<tr>
+<th>标记符号</th>
+<th>描述</th>
+<th>用法示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&#39;&#39;</code> 或 <code>&#39; &#39;</code></td>
+<td>无标记 (nothing)</td>
+<td><code>plt.plot(x, y, marker=&#39;&#39;)</code></td>
+</tr>
+<tr>
+<td><code>&#39;$...$&#39;</code></td>
+<td>数学文本渲染</td>
+<td><code>plt.plot(x, y, marker=&#39;$\u266B$&#39;)</code></td>
+</tr>
+</tbody></table>
+<h2 id="高级-Markers-功能"><a href="#高级-Markers-功能" class="headerlink" title="高级 Markers 功能"></a>高级 Markers 功能</h2><h3 id="自定义路径标记"><a href="#自定义路径标记" class="headerlink" title="自定义路径标记"></a>自定义路径标记</h3><p>可以使用 <code>(x, y)</code> 坐标对的列表来定义自定义路径标记：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义自定义标记路径</span></span><br><span class="line">custom_marker = [(<span class="number">0</span>, <span class="number">0</span>), (<span class="number">1</span>, <span class="number">0</span>), (<span class="number">1</span>, <span class="number">1</span>), (<span class="number">0</span>, <span class="number">1</span>), (<span class="number">0</span>, <span class="number">0</span>)]</span><br><span class="line"></span><br><span class="line">x = np.linspace(<span class="number">0</span>, <span class="number">10</span>, <span class="number">10</span>)</span><br><span class="line">y = np.sin(x)</span><br><span class="line"></span><br><span class="line">plt.plot(x, y, marker=custom_marker, markersize=<span class="number">10</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h3 id="正多边形标记"><a href="#正多边形标记" class="headerlink" title="正多边形标记"></a>正多边形标记</h3><p>使用 <code>(numsides, style, angle)</code> 格式创建正多边形：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个六边形标记</span></span><br><span class="line">hexagon_marker = (<span class="number">6</span>, <span class="number">0</span>, <span class="number">0</span>)  <span class="comment"># 6边形，样式0，角度0</span></span><br><span class="line">plt.plot(x, y, marker=hexagon_marker, markersize=<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="星形标记"><a href="#星形标记" class="headerlink" title="星形标记"></a>星形标记</h3><p>使用 <code>(numsides, style, angle)</code> 格式创建星形：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个五角星</span></span><br><span class="line">star_marker = (<span class="number">5</span>, <span class="number">1</span>, <span class="number">0</span>)  <span class="comment"># 5边形，样式1（星形），角度0</span></span><br><span class="line">plt.plot(x, y, marker=star_marker, markersize=<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="星号标记"><a href="#星号标记" class="headerlink" title="星号标记"></a>星号标记</h3><p>使用 <code>(numsides, style, angle)</code> 格式创建星号：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个8角星号</span></span><br><span class="line">asterisk_marker = (<span class="number">8</span>, <span class="number">2</span>, <span class="number">0</span>)  <span class="comment"># 8边形，样式2（星号），角度0</span></span><br><span class="line">plt.plot(x, y, marker=asterisk_marker, markersize=<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="STIX-数学字体符号"><a href="#STIX-数学字体符号" class="headerlink" title="STIX 数学字体符号"></a>STIX 数学字体符号</h2><p>Matplotlib 支持使用 STIX 数学字体来创建特殊符号标记：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用音符符号作为标记</span></span><br><span class="line">plt.plot(x, y, marker=<span class="string">r&#x27;$\u266B$&#x27;</span>, markersize=<span class="number">15</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用希腊字母</span></span><br><span class="line">plt.plot(x, y, marker=<span class="string">r&#x27;$\alpha$&#x27;</span>, markersize=<span class="number">15</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用数学符号</span></span><br><span class="line">plt.plot(x, y, marker=<span class="string">r&#x27;$\infty$&#x27;</span>, markersize=<span class="number">15</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="数字标记对照"><a href="#数字标记对照" class="headerlink" title="数字标记对照"></a>数字标记对照</h2><p>整数 0-11 对应特定的线条和三角形标记：</p>
+<table>
+<thead>
+<tr>
+<th>数字</th>
+<th>对应标记</th>
+<th>常量名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>左刻度</td>
+<td><code>TICKLEFT</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>右刻度</td>
+<td><code>TICKRIGHT</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>上刻度</td>
+<td><code>TICKUP</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>下刻度</td>
+<td><code>TICKDOWN</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>左插入符</td>
+<td><code>CARETLEFT</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>右插入符</td>
+<td><code>CARETRIGHT</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>上插入符</td>
+<td><code>CARETUP</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>下插入符</td>
+<td><code>CARETDOWN</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>左插入符（底部居中）</td>
+<td><code>CARETLEFTBASE</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>右插入符（底部居中）</td>
+<td><code>CARETRIGHTBASE</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td>上插入符（底部居中）</td>
+<td><code>CARETUPBASE</code></td>
+</tr>
+<tr>
+<td>11</td>
+<td>下插入符（底部居中）</td>
+<td><code>CARETDOWNBASE</code></td>
+</tr>
+</tbody></table>
+<h2 id="MarkerStyle-类"><a href="#MarkerStyle-类" class="headerlink" title="MarkerStyle 类"></a>MarkerStyle 类</h2><p><code>MarkerStyle</code> 类提供了更高级的标记自定义功能：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib.markers <span class="keyword">import</span> MarkerStyle</span><br><span class="line"><span class="keyword">import</span> matplotlib.transforms <span class="keyword">as</span> transforms</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建自定义标记样式</span></span><br><span class="line">marker_style = MarkerStyle(<span class="string">&#x27;o&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 应用变换（旋转、偏移）</span></span><br><span class="line">transform = transforms.Affine2D().rotate_deg(<span class="number">45</span>)</span><br><span class="line">marker_style.set_transform(transform)</span><br><span class="line"></span><br><span class="line">plt.plot(x, y, marker=marker_style, markersize=<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="实用示例"><a href="#实用示例" class="headerlink" title="实用示例"></a>实用示例</h2><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.linspace(<span class="number">0</span>, <span class="number">10</span>, <span class="number">10</span>)</span><br><span class="line">y1 = np.sin(x)</span><br><span class="line">y2 = np.cos(x)</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">plt.plot(x, y1, marker=<span class="string">&#x27;o&#x27;</span>, label=<span class="string">&#x27;sin(x)&#x27;</span>)</span><br><span class="line">plt.plot(x, y2, marker=<span class="string">&#x27;s&#x27;</span>, label=<span class="string">&#x27;cos(x)&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.grid(<span class="literal">True</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h3 id="散点图中的标记"><a href="#散点图中的标记" class="headerlink" title="散点图中的标记"></a>散点图中的标记</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成随机数据</span></span><br><span class="line">np.random.seed(<span class="number">42</span>)</span><br><span class="line">x = np.random.randn(<span class="number">100</span>)</span><br><span class="line">y = np.random.randn(<span class="number">100</span>)</span><br><span class="line">colors = np.random.rand(<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>, <span class="number">6</span>))</span><br><span class="line">plt.scatter(x, y, c=colors, marker=<span class="string">&#x27;D&#x27;</span>, s=<span class="number">50</span>, alpha=<span class="number">0.7</span>)</span><br><span class="line">plt.colorbar()</span><br><span class="line">plt.title(<span class="string">&#x27;散点图示例&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h3 id="多种标记组合"><a href="#多种标记组合" class="headerlink" title="多种标记组合"></a>多种标记组合</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">markers = [<span class="string">&#x27;o&#x27;</span>, <span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;^&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;v&#x27;</span>, <span class="string">&#x27;&lt;&#x27;</span>, <span class="string">&#x27;&gt;&#x27;</span>, <span class="string">&#x27;p&#x27;</span>, <span class="string">&#x27;*&#x27;</span>, <span class="string">&#x27;h&#x27;</span>]</span><br><span class="line">colors = plt.cm.tab10(np.linspace(<span class="number">0</span>, <span class="number">1</span>, <span class="built_in">len</span>(markers)))</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>, <span class="number">8</span>))</span><br><span class="line"><span class="keyword">for</span> i, (marker, color) <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">zip</span>(markers, colors)):</span><br><span class="line">    y = np.sin(x + i * <span class="number">0.3</span>)</span><br><span class="line">    plt.plot(x, y, marker=marker, color=color, </span><br><span class="line">             label=<span class="string">f&#x27;marker: <span class="subst">&#123;marker&#125;</span>&#x27;</span>, markersize=<span class="number">8</span>)</span><br><span class="line"></span><br><span class="line">plt.legend()</span><br><span class="line">plt.grid(<span class="literal">True</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;多种标记示例&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li><strong>性能考虑</strong>：在处理大量数据点时，复杂的标记可能会影响渲染性能</li>
+<li><strong>可读性</strong>：选择标记时要考虑图表的可读性和美观性</li>
+<li><strong>兼容性</strong>：某些标记在不同的后端可能显示效果不同</li>
+<li><strong>大小调整</strong>：使用 <code>markersize</code> 参数调整标记大小以适应图表需求</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Matplotlib 提供了丰富的标记选项，从简单的几何形状到复杂的自定义路径和数学符号。掌握这些标记的使用方法，可以帮助您创建更具表现力和专业性的数据可视化图表。选择合适的标记不仅能提高图表的可读性，还能增强数据的视觉表现力。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Matplotlib/" rel="tag"># Matplotlib</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" rel="tag"># 数据可视化</a>
+              <a href="/tags/%E5%9B%BE%E8%A1%A8%E6%A0%87%E8%AE%B0/" rel="tag"># 图表标记</a>
+              <a href="/tags/markers/" rel="tag"># markers</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/07/10/creep_cal/" rel="prev" title="混凝土徐变多模型计算平台 creep_cal 项目介绍">
+                  <i class="fa fa-angle-left"></i> 混凝土徐变多模型计算平台 creep_cal 项目介绍
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">halunhaku</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">2k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">7 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://waline-gamma-lake-91.vercel.app/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"欢迎评论~","el":"#waline","comment":true,"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","path":"/2025/07/16/matplotlib_markers/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+</body>
+</html>
