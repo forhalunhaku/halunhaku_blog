@@ -1,197 +1,237 @@
 <!DOCTYPE html>
-<html lang=zh>
+<html lang="zh-CN">
 <head>
-    <!-- so meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Matplotlib Markers 完整指南简介Matplotlib 中的 markers（标记）是数据可视化中的重要组成部分，用于在图表中标识数据点。markers 功能广泛应用于 plot()、scatter() 和 errorbar() 等函数中，帮助用户创建更直观、更具表现力的图表。">
+  <!-- SEO and Meta Tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Title -->
+
+<title>Matplotlib Markers 完整指南 - halunhaku&#39;s blog</title>
+
+<!-- Description -->
+
+
+<meta name="description" content="Matplotlib Markers 完整指南简介Matplotlib 中的 markers（标记）是数据可视化中的重要组成部分，用于在图表中标识数据点。markers 功能广泛应用于 plot()、scatter() 和 errorbar() 等函数中，帮助用户创建更直观、更具表现力的图表。">
+
+
+<!-- Keywords -->
+
+<meta name="keywords" content="Matplotlib, Python, 数据可视化, 图表标记, markers">
+
+
+<!-- Author -->
+
+<meta name="author" content="halunhaku">
+
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://blog.halunhaku.top/2025/07/16/matplotlib_markers/">
+
+<!-- Open Graph -->
 <meta property="og:type" content="article">
-<meta property="og:title" content="Matplotlib Markers 完整指南">
-<meta property="og:url" content="https://blog.halunhaku.top/2025/07/16/matplotlib_markers/index.html">
+<meta property="og:title" content="Matplotlib Markers 完整指南 - halunhaku&#39;s blog">
+<meta property="og:url" content="https://blog.halunhaku.top/2025/07/16/matplotlib_markers/">
 <meta property="og:site_name" content="halunhaku&#39;s blog">
+
 <meta property="og:description" content="Matplotlib Markers 完整指南简介Matplotlib 中的 markers（标记）是数据可视化中的重要组成部分，用于在图表中标识数据点。markers 功能广泛应用于 plot()、scatter() 和 errorbar() 等函数中，帮助用户创建更直观、更具表现力的图表。">
-<meta property="og:locale" content="zh_CN">
+
+
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Matplotlib Markers 完整指南 - halunhaku&#39;s blog">
+
+<meta name="twitter:description" content="Matplotlib Markers 完整指南简介Matplotlib 中的 markers（标记）是数据可视化中的重要组成部分，用于在图表中标识数据点。markers 功能广泛应用于 plot()、scatter() 和 errorbar() 等函数中，帮助用户创建更直观、更具表现力的图表。">
+
+
+
+<!-- Article specific meta -->
+
 <meta property="article:published_time" content="2025-07-16T14:00:00.000Z">
+
 <meta property="article:modified_time" content="2025-07-16T14:26:57.564Z">
-<meta property="article:author" content="halunhaku">
-<meta property="article:tag" content="Matplotlib">
-<meta property="article:tag" content="Python">
-<meta property="article:tag" content="数据可视化">
-<meta property="article:tag" content="图表标记">
-<meta property="article:tag" content="markers">
-<meta name="twitter:card" content="summary">
-    
-    
-      
-        
-          <link rel="shortcut icon" href="/images/favicon.ico">
-        
-      
-      
-        
-          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
-        
-      
-      
-        
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-        
-      
-    
-    <!-- title -->
-    <title>Matplotlib Markers 完整指南</title>
-    <!-- async scripts -->
-    <!-- Google Analytics -->
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8RF10YMWZK"></script>
-  <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-8RF10YMWZK');
-  </script>
 
 
-    <!-- Umami Analytics -->
-
-
-    <!-- styles -->
-    
-<link rel="stylesheet" href="/css/style.css">
-
-    <!-- persian styles -->
-    
-    <!-- rss -->
-    
-    
-      <link rel="alternate" href="/true" title="halunhaku&#39;s blog" type="application/atom+xml" />
-    
-	<!-- mathjax -->
-	
-		<script type="text/x-mathjax-config">
-		  MathJax.Hub.Config({
-			tex2jax: {
-			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-			  inlineMath: [['$','$']]
-			}
-		  });
-		</script>
-		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
-	
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-<body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
-  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-        <!--
-       --><li><a href="/">首页</a></li><!--
-     --><!--
-       --><li><a href="/archives/">归档</a></li><!--
-     --><!--
-       --><li><a href="/tags/">标签</a></li><!--
-     --><!--
-       --><li><a href="/categories/">分类</a></li><!--
-     --><!--
-       --><li><a href="/about/">关于</a></li><!--
-     -->
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        
-        <li><a class="icon" aria-label="下一篇" href="/2025/07/10/creep_cal/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">上一篇</span>
-      <span id="i-next" class="info" style="display:none;">下一篇</span>
-      <span id="i-top" class="info" style="display:none;">返回顶部</span>
-      <span id="i-share" class="info" style="display:none;">分享文章</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&text=Matplotlib Markers 完整指南"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&title=Matplotlib Markers 完整指南"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&is_video=false&description=Matplotlib Markers 完整指南"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Matplotlib Markers 完整指南&body=Check out this article: https://blog.halunhaku.top/2025/07/16/matplotlib_markers/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&title=Matplotlib Markers 完整指南"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&title=Matplotlib Markers 完整指南"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&title=Matplotlib Markers 完整指南"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&title=Matplotlib Markers 完整指南"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&name=Matplotlib Markers 完整指南&description=&lt;h1 id=&#34;Matplotlib-Markers-完整指南&#34;&gt;&lt;a href=&#34;#Matplotlib-Markers-完整指南&#34; class=&#34;headerlink&#34; title=&#34;Matplotlib Markers 完整指南&#34;&gt;&lt;/a&gt;Matplotlib Markers 完整指南&lt;/h1&gt;&lt;h2 id=&#34;简介&#34;&gt;&lt;a href=&#34;#简介&#34; class=&#34;headerlink&#34; title=&#34;简介&#34;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;Matplotlib 中的 markers（标记）是数据可视化中的重要组成部分，用于在图表中标识数据点。markers 功能广泛应用于 &lt;code&gt;plot()&lt;/code&gt;、&lt;code&gt;scatter()&lt;/code&gt; 和 &lt;code&gt;errorbar()&lt;/code&gt; 等函数中，帮助用户创建更直观、更具表现力的图表。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&t=Matplotlib Markers 完整指南"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-    
-    
-      <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Matplotlib-Markers-%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97"><span class="toc-number">1.</span> <span class="toc-text">Matplotlib Markers 完整指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC-Markers-%E5%88%97%E8%A1%A8"><span class="toc-number">1.2.</span> <span class="toc-text">基本 Markers 列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E5%92%8C%E5%BD%A2%E7%8A%B6%E6%A0%87%E8%AE%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text">点和形状标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%BD%A2%E6%A0%87%E8%AE%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text">三角形标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%9D%A1%E5%92%8C%E7%AC%A6%E5%8F%B7%E6%A0%87%E8%AE%B0"><span class="toc-number">1.2.3.</span> <span class="toc-text">线条和符号标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%BB%E5%BA%A6%E6%A0%87%E8%AE%B0"><span class="toc-number">1.2.4.</span> <span class="toc-text">刻度标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E7%AC%A6%E5%8F%B7%E6%A0%87%E8%AE%B0"><span class="toc-number">1.2.5.</span> <span class="toc-text">插入符号标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%A0%87%E8%AE%B0"><span class="toc-number">1.2.6.</span> <span class="toc-text">特殊标记</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7-Markers-%E5%8A%9F%E8%83%BD"><span class="toc-number">1.3.</span> <span class="toc-text">高级 Markers 功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%B7%AF%E5%BE%84%E6%A0%87%E8%AE%B0"><span class="toc-number">1.3.1.</span> <span class="toc-text">自定义路径标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%A4%9A%E8%BE%B9%E5%BD%A2%E6%A0%87%E8%AE%B0"><span class="toc-number">1.3.2.</span> <span class="toc-text">正多边形标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%9F%E5%BD%A2%E6%A0%87%E8%AE%B0"><span class="toc-number">1.3.3.</span> <span class="toc-text">星形标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%9F%E5%8F%B7%E6%A0%87%E8%AE%B0"><span class="toc-number">1.3.4.</span> <span class="toc-text">星号标记</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STIX-%E6%95%B0%E5%AD%A6%E5%AD%97%E4%BD%93%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.4.</span> <span class="toc-text">STIX 数学字体符号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E6%A0%87%E8%AE%B0%E5%AF%B9%E7%85%A7"><span class="toc-number">1.5.</span> <span class="toc-text">数字标记对照</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MarkerStyle-%E7%B1%BB"><span class="toc-number">1.6.</span> <span class="toc-text">MarkerStyle 类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.7.</span> <span class="toc-text">实用示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">1.7.1.</span> <span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E7%82%B9%E5%9B%BE%E4%B8%AD%E7%9A%84%E6%A0%87%E8%AE%B0"><span class="toc-number">1.7.2.</span> <span class="toc-text">散点图中的标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%A7%8D%E6%A0%87%E8%AE%B0%E7%BB%84%E5%90%88"><span class="toc-number">1.7.3.</span> <span class="toc-text">多种标记组合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.8.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.9.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
-      </div>
-    
-  </span>
-</div>
-
-    
-    <div class="content index py4 ">
-        
-        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
-    <h1 class="posttitle p-name" itemprop="name headline">
-        Matplotlib Markers 完整指南
-    </h1>
-
-
-
-    <div class="meta">
-      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-name" itemprop="name">halunhaku</span>
-      </span>
-      
-    <div class="postdate">
-      
-        <time datetime="2025-07-16T14:00:00.000Z" class="dt-published" itemprop="datePublished">2025-07-16</time>
-        
-        (Updated: <time datetime="2025-07-16T14:26:57.564Z" class="dt-updated" itemprop="dateModified">2025-07-16</time>)
-        
-      
-    </div>
-
-
-      
-    <div class="article-category">
-        <i class="fa-solid fa-archive"></i>
-        <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">学习记录</a>
-    </div>
-
-
-      
-    <div class="article-tag">
-        <i class="fa-solid fa-tag"></i>
-        <a class="p-category" href="/tags/Matplotlib/" rel="tag">Matplotlib</a>, <a class="p-category" href="/tags/Python/" rel="tag">Python</a>, <a class="p-category" href="/tags/markers/" rel="tag">markers</a>, <a class="p-category" href="/tags/%E5%9B%BE%E8%A1%A8%E6%A0%87%E8%AE%B0/" rel="tag">图表标记</a>, <a class="p-category" href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" rel="tag">数据可视化</a>
-    </div>
-
-
-    </div>
-  </header>
+  
+<meta property="article:section" content="学习记录">
   
 
-  <div class="content e-content" itemprop="articleBody">
-    <h1 id="Matplotlib-Markers-完整指南"><a href="#Matplotlib-Markers-完整指南" class="headerlink" title="Matplotlib Markers 完整指南"></a>Matplotlib Markers 完整指南</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Matplotlib 中的 markers（标记）是数据可视化中的重要组成部分，用于在图表中标识数据点。markers 功能广泛应用于 <code>plot()</code>、<code>scatter()</code> 和 <code>errorbar()</code> 等函数中，帮助用户创建更直观、更具表现力的图表。</p>
+
+  
+<meta property="article:tag" content="Matplotlib">
+  
+<meta property="article:tag" content="Python">
+  
+<meta property="article:tag" content="数据可视化">
+  
+<meta property="article:tag" content="图表标记">
+  
+<meta property="article:tag" content="markers">
+  
+
+
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<!-- RSS Feed -->
+
+<link rel="alternate" type="application/rss+xml" title="halunhaku&#39;s blog" href="/atom.xml">
+
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    // Suppress Tailwind CDN production warning in development
+    if (typeof tailwind !== 'undefined') {
+      tailwind.config = {
+        corePlugins: {
+          preflight: false,
+        }
+      }
+    }
+  </script>
+  
+  
+  <!-- Theme Colors -->
+  <style type="text/tailwindcss">
+    :root {
+      
+      --primary-color: #0c7ff2;
+      
+      --secondary-color: #f3f4f6;
+      
+      --background-color: #ffffff;
+      
+      --text-primary-color: #111827;
+      
+      --text-secondary-color: #6b7280;
+      
+      --border-color: #e5e7eb;
+      
+    }
+    body {
+      font-family: 'Newsreader', serif;
+      background-color: var(--background-color);
+      color: var(--text-primary-color);
+    }
+  </style>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
+  <div class="min-h-screen flex flex-col">
+    <header class="sticky top-0 z-10 w-full bg-[var(--background-color)]/80 backdrop-blur-md">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-24 ">
+      <!-- Logo and Title -->
+      <div class="flex items-center gap-3">
+        
+          
+            <!-- 自定义Logo -->
+            <img src="/images/avatar.png" 
+                 alt="halunhaku&#39;s blog" 
+                 class="h-8 w-8 object-contain">
+          
+        
+        <h1 class="text-3xl font-bold tracking-tight">halunhaku&#39;s blog</h1>
+      </div>
+      
+      <!-- Navigation -->
+      <div class="flex items-center gap-2">
+        
+          
+          <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+             href="/">Home</a>
+        
+          
+          <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+             href="/categories/">Categories</a>
+        
+          
+          <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+             href="/tags/">Tags</a>
+        
+      </div>
+    </div>
+  </div>
+</header>
+    
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <article class="max-w-4xl mx-auto">
+        <!-- Post Header -->
+        <header class="mb-12">
+          
+          
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            Matplotlib Markers 完整指南
+          </h1>
+          
+          <div class="flex items-center gap-6 text-[var(--text-secondary-color)] text-sm">
+            <time datetime="2025-07-16T14:00:00.000Z">
+              July 16, 2025
+            </time>
+            
+            
+              <div class="flex items-center gap-2">
+                <span>in</span>
+                
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" 
+                     class="text-[var(--primary-color)] hover:underline">
+                    学习记录
+                  </a>
+                  
+                
+              </div>
+            
+            
+            
+              <div class="flex items-center gap-2">
+                <span>tagged</span>
+                
+                  <a href="/tags/Matplotlib/" 
+                     class="text-[var(--primary-color)] hover:underline">
+                    #Matplotlib
+                  </a>
+                  , 
+                
+                  <a href="/tags/Python/" 
+                     class="text-[var(--primary-color)] hover:underline">
+                    #Python
+                  </a>
+                  , 
+                
+                  <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" 
+                     class="text-[var(--primary-color)] hover:underline">
+                    #数据可视化
+                  </a>
+                  , 
+                
+                  <a href="/tags/%E5%9B%BE%E8%A1%A8%E6%A0%87%E8%AE%B0/" 
+                     class="text-[var(--primary-color)] hover:underline">
+                    #图表标记
+                  </a>
+                  , 
+                
+                  <a href="/tags/markers/" 
+                     class="text-[var(--primary-color)] hover:underline">
+                    #markers
+                  </a>
+                  
+                
+              </div>
+            
+          </div>
+        </header>
+        
+        <!-- Post Content -->
+        <div class="prose prose-lg max-w-none">
+          <h1 id="Matplotlib-Markers-完整指南"><a href="#Matplotlib-Markers-完整指南" class="headerlink" title="Matplotlib Markers 完整指南"></a>Matplotlib Markers 完整指南</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Matplotlib 中的 markers（标记）是数据可视化中的重要组成部分，用于在图表中标识数据点。markers 功能广泛应用于 <code>plot()</code>、<code>scatter()</code> 和 <code>errorbar()</code> 等函数中，帮助用户创建更直观、更具表现力的图表。</p>
 <span id="more"></span>
 <h2 id="基本-Markers-列表"><a href="#基本-Markers-列表" class="headerlink" title="基本 Markers 列表"></a>基本 Markers 列表</h2><h3 id="点和形状标记"><a href="#点和形状标记" class="headerlink" title="点和形状标记"></a>点和形状标记</h3><table>
 <thead>
@@ -544,175 +584,74 @@
 </ol>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Matplotlib 提供了丰富的标记选项，从简单的几何形状到复杂的自定义路径和数学符号。掌握这些标记的使用方法，可以帮助您创建更具表现力和专业性的数据可视化图表。选择合适的标记不仅能提高图表的可读性，还能增强数据的视觉表现力。</p>
 
-  </div>
-</article>
-
-  <div id="waline"></div>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      try {
-        Waline.init({
-          el: '#waline',
-          serverURL: 'https://waline-gamma-lake-91.vercel.app/',
-          lang: 'zh-CN',
-          placeholder: '欢迎评论~',
-          avatar: 'monsterid',
-          meta: ["nick","mail","link"],
-          pageSize: 10,
-          visitor: true,
-          comment: true,
-          requiredMeta: ["nick","mail"],
-          wordLimit: 0,
-          imageUploader: false,
-          highlighter: true,
-          texRenderer: false
-        });
-      } catch (e) {
-        console.error('Waline初始化失败:', e);
-        document.getElementById('waline').innerHTML = '<p style="color:red;">评论系统加载失败，请刷新页面重试</p>';
-      }
-    });
-  </script>
-
-
+        </div>
         
-          <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-        
-          <li><a href="/">首页</a></li>
-        
-          <li><a href="/archives/">归档</a></li>
-        
-          <li><a href="/tags/">标签</a></li>
-        
-          <li><a href="/categories/">分类</a></li>
-        
-          <li><a href="/about/">关于</a></li>
-        
-      </ul>
-    </div>
-
+        <!-- Post Footer -->
+        <footer class="mt-16 pt-8 border-t border-[var(--border-color)]">
+          <div class="flex flex-wrap gap-2 mb-8">
+            
+              
+                <a href="/tags/Matplotlib/" 
+                   class="px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-primary-color)] text-sm rounded-full hover:bg-[var(--primary-color)] hover:text-white transition-colors">
+                  Matplotlib
+                </a>
+              
+                <a href="/tags/Python/" 
+                   class="px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-primary-color)] text-sm rounded-full hover:bg-[var(--primary-color)] hover:text-white transition-colors">
+                  Python
+                </a>
+              
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" 
+                   class="px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-primary-color)] text-sm rounded-full hover:bg-[var(--primary-color)] hover:text-white transition-colors">
+                  数据可视化
+                </a>
+              
+                <a href="/tags/%E5%9B%BE%E8%A1%A8%E6%A0%87%E8%AE%B0/" 
+                   class="px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-primary-color)] text-sm rounded-full hover:bg-[var(--primary-color)] hover:text-white transition-colors">
+                  图表标记
+                </a>
+              
+                <a href="/tags/markers/" 
+                   class="px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-primary-color)] text-sm rounded-full hover:bg-[var(--primary-color)] hover:text-white transition-colors">
+                  markers
+                </a>
+              
+            
+          </div>
+          
+          <!-- Navigation -->
+          <nav class="flex justify-between items-center">
+            
+              <div></div>
+            
+            
+            
+              <a href="/2025/07/10/creep_cal/" 
+                 class="flex items-center gap-2 text-[var(--primary-color)] hover:underline">
+                Next: 混凝土徐变多模型计算平台 creep_cal 项目介绍
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </a>
+            
+          </nav>
+        </footer>
+      </article>
+    </main>
     
-    
-      <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Matplotlib-Markers-%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97"><span class="toc-number">1.</span> <span class="toc-text">Matplotlib Markers 完整指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC-Markers-%E5%88%97%E8%A1%A8"><span class="toc-number">1.2.</span> <span class="toc-text">基本 Markers 列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E5%92%8C%E5%BD%A2%E7%8A%B6%E6%A0%87%E8%AE%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text">点和形状标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%BD%A2%E6%A0%87%E8%AE%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text">三角形标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%9D%A1%E5%92%8C%E7%AC%A6%E5%8F%B7%E6%A0%87%E8%AE%B0"><span class="toc-number">1.2.3.</span> <span class="toc-text">线条和符号标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%BB%E5%BA%A6%E6%A0%87%E8%AE%B0"><span class="toc-number">1.2.4.</span> <span class="toc-text">刻度标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E7%AC%A6%E5%8F%B7%E6%A0%87%E8%AE%B0"><span class="toc-number">1.2.5.</span> <span class="toc-text">插入符号标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%A0%87%E8%AE%B0"><span class="toc-number">1.2.6.</span> <span class="toc-text">特殊标记</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7-Markers-%E5%8A%9F%E8%83%BD"><span class="toc-number">1.3.</span> <span class="toc-text">高级 Markers 功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%B7%AF%E5%BE%84%E6%A0%87%E8%AE%B0"><span class="toc-number">1.3.1.</span> <span class="toc-text">自定义路径标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%A4%9A%E8%BE%B9%E5%BD%A2%E6%A0%87%E8%AE%B0"><span class="toc-number">1.3.2.</span> <span class="toc-text">正多边形标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%9F%E5%BD%A2%E6%A0%87%E8%AE%B0"><span class="toc-number">1.3.3.</span> <span class="toc-text">星形标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%9F%E5%8F%B7%E6%A0%87%E8%AE%B0"><span class="toc-number">1.3.4.</span> <span class="toc-text">星号标记</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STIX-%E6%95%B0%E5%AD%A6%E5%AD%97%E4%BD%93%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.4.</span> <span class="toc-text">STIX 数学字体符号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E6%A0%87%E8%AE%B0%E5%AF%B9%E7%85%A7"><span class="toc-number">1.5.</span> <span class="toc-text">数字标记对照</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MarkerStyle-%E7%B1%BB"><span class="toc-number">1.6.</span> <span class="toc-text">MarkerStyle 类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.7.</span> <span class="toc-text">实用示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">1.7.1.</span> <span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E7%82%B9%E5%9B%BE%E4%B8%AD%E7%9A%84%E6%A0%87%E8%AE%B0"><span class="toc-number">1.7.2.</span> <span class="toc-text">散点图中的标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%A7%8D%E6%A0%87%E8%AE%B0%E7%BB%84%E5%90%88"><span class="toc-number">1.7.3.</span> <span class="toc-text">多种标记组合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.8.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.9.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+    <footer class="bg-[var(--background-color)] border-t border-[var(--border-color)]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <p class="text-[var(--text-secondary-color)] text-sm">
+        © 2025 halunhaku&#39;s blog. All rights reserved.
+      </p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a class="text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] transition-colors text-sm" href="#">Privacy Policy</a>
+        <a class="text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] transition-colors text-sm" href="#">Terms of Service</a>
       </div>
-    
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&text=Matplotlib Markers 完整指南"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&title=Matplotlib Markers 完整指南"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&is_video=false&description=Matplotlib Markers 完整指南"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Matplotlib Markers 完整指南&body=Check out this article: https://blog.halunhaku.top/2025/07/16/matplotlib_markers/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&title=Matplotlib Markers 完整指南"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&title=Matplotlib Markers 完整指南"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&title=Matplotlib Markers 完整指南"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&title=Matplotlib Markers 完整指南"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&name=Matplotlib Markers 完整指南&description=&lt;h1 id=&#34;Matplotlib-Markers-完整指南&#34;&gt;&lt;a href=&#34;#Matplotlib-Markers-完整指南&#34; class=&#34;headerlink&#34; title=&#34;Matplotlib Markers 完整指南&#34;&gt;&lt;/a&gt;Matplotlib Markers 完整指南&lt;/h1&gt;&lt;h2 id=&#34;简介&#34;&gt;&lt;a href=&#34;#简介&#34; class=&#34;headerlink&#34; title=&#34;简介&#34;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;Matplotlib 中的 markers（标记）是数据可视化中的重要组成部分，用于在图表中标识数据点。markers 功能广泛应用于 &lt;code&gt;plot()&lt;/code&gt;、&lt;code&gt;scatter()&lt;/code&gt; 和 &lt;code&gt;errorbar()&lt;/code&gt; 等函数中，帮助用户创建更直观、更具表现力的图表。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.halunhaku.top/2025/07/16/matplotlib_markers/&t=Matplotlib Markers 完整指南"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
     </div>
-
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
-        
-          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
-        
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
-    </div>
-
-  </div>
-</div>
-
-        
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
-    
-    
-    2023-2025
-    halunhaku
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-        <!--
-       --><li><a href="/">首页</a></li><!--
-     --><!--
-       --><li><a href="/archives/">归档</a></li><!--
-     --><!--
-       --><li><a href="/tags/">标签</a></li><!--
-     --><!--
-       --><li><a href="/categories/">分类</a></li><!--
-     --><!--
-       --><li><a href="/about/">关于</a></li><!--
-     -->
-      </ul>
-    </nav>
   </div>
 </footer>
-
-    </div>
-    <!-- styles -->
-
-
-
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
-
-
-    <!-- jquery -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
-
-
-
-
-<!-- clipboard -->
-
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
-  
-  <script type="text/javascript">
-  $(function() {
-    // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
-    btn += '<i class="fa-regular fa-clone"></i>';
-    btn += '</span>';
-    // mount it!
-    $(".highlight table").before(btn);
-    var clip = new ClipboardJS('.btn-copy', {
-      text: function(trigger) {
-        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
-      }
-    });
-    clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "复制成功！");
-      e.clearSelection();
-    })
-  })
-  </script>
-
-
-<script src="/js/main.js"></script>
-
-<!-- search -->
-
-<!-- Baidu Analytics -->
-
-<!-- Cloudflare Analytics -->
-
-<!-- Disqus Comments -->
-
-<!-- utterances Comments -->
-
+  </div>
 </body>
 </html>
