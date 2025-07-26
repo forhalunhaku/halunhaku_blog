@@ -98,6 +98,9 @@
       color: var(--text-primary-color);
     }
   </style>
+  
+  <!-- Mobile Menu Script -->
+  <script src="/js/mobile-menu.js" defer></script>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
   <div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
@@ -115,24 +118,55 @@
                  class="h-8 w-8 object-contain">
           
         
-        <h1 class="text-3xl font-bold tracking-tight">halunhaku&#39;s blog</h1>
+        <h1 class="text-2xl md:text-3xl font-bold tracking-tight">halunhaku&#39;s blog</h1>
       </div>
       
       <!-- Navigation -->
       <div class="flex items-center gap-2">
-        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-2">
           
-          <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
-             href="/">Home</a>
-        
+            
+            <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+               href="/">Home</a>
           
-          <a class="px-4 py-2 text-base font-medium rounded-md bg-[var(--secondary-color)] text-[var(--text-primary-color)] transition-colors" 
-             href="/categories/">Categories</a>
-        
+            
+            <a class="px-4 py-2 text-base font-medium rounded-md bg-[var(--secondary-color)] text-[var(--text-primary-color)] transition-colors" 
+               href="/categories/">Categories</a>
           
-          <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
-             href="/tags/">Tags</a>
+            
+            <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+               href="/tags/">Tags</a>
+          
+        </div>
         
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="p-2 rounded-md text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] hover:bg-[var(--secondary-color)] transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Navigation Menu -->
+      <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-[var(--background-color)] border-t border-[var(--border-color)] shadow-lg">
+        <div class="px-4 py-2 space-y-1">
+          
+            
+            <a class="block px-4 py-3 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+               href="/">Home</a>
+          
+            
+            <a class="block px-4 py-3 text-base font-medium rounded-md bg-[var(--secondary-color)] text-[var(--text-primary-color)] transition-colors" 
+               href="/categories/">Categories</a>
+          
+            
+            <a class="block px-4 py-3 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+               href="/tags/">Tags</a>
+          
+        </div>
       </div>
     </div>
   </div>

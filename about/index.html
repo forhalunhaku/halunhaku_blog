@@ -119,6 +119,9 @@ Email: halunhaku@gmail.com
       color: var(--text-primary-color);
     }
   </style>
+  
+  <!-- Mobile Menu Script -->
+  <script src="/js/mobile-menu.js" defer></script>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
   <div class="min-h-screen flex flex-col">
@@ -135,24 +138,55 @@ Email: halunhaku@gmail.com
                  class="h-8 w-8 object-contain">
           
         
-        <h1 class="text-3xl font-bold tracking-tight">halunhaku&#39;s blog</h1>
+        <h1 class="text-2xl md:text-3xl font-bold tracking-tight">halunhaku&#39;s blog</h1>
       </div>
       
       <!-- Navigation -->
       <div class="flex items-center gap-2">
-        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-2">
           
-          <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
-             href="/">Home</a>
-        
+            
+            <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+               href="/">Home</a>
           
-          <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
-             href="/categories/">Categories</a>
-        
+            
+            <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+               href="/categories/">Categories</a>
           
-          <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
-             href="/tags/">Tags</a>
+            
+            <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+               href="/tags/">Tags</a>
+          
+        </div>
         
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="p-2 rounded-md text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] hover:bg-[var(--secondary-color)] transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Navigation Menu -->
+      <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-[var(--background-color)] border-t border-[var(--border-color)] shadow-lg">
+        <div class="px-4 py-2 space-y-1">
+          
+            
+            <a class="block px-4 py-3 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+               href="/">Home</a>
+          
+            
+            <a class="block px-4 py-3 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+               href="/categories/">Categories</a>
+          
+            
+            <a class="block px-4 py-3 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+               href="/tags/">Tags</a>
+          
+        </div>
       </div>
     </div>
   </div>
@@ -175,7 +209,7 @@ Email: halunhaku@gmail.com
           <h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>这里是halunhaku的个人博客，主要分享技术、学习和生活的点滴。</p>
 <h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
 <li>GitHub: <a target="_blank" rel="noopener" href="https://github.com/forhalunhaku">forhalunhaku</a></li>
-<li>Email: <a href="mailto:&#x68;&#x61;&#108;&#x75;&#x6e;&#104;&#97;&#107;&#x75;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;">halunhaku@gmail.com</a></li>
+<li>Email: <a href="mailto:&#x68;&#97;&#x6c;&#x75;&#x6e;&#x68;&#x61;&#x6b;&#x75;&#x40;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;">halunhaku@gmail.com</a></li>
 </ul>
 <h2 id="关于本站"><a href="#关于本站" class="headerlink" title="关于本站"></a>关于本站</h2><p>本站使用 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 搭建，主题为 <a target="_blank" rel="noopener" href="https://github.com/probberechts/hexo-theme-cactus">Cactus</a>。</p>
 <p>感谢您的访问！</p>

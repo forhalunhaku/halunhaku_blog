@@ -140,6 +140,9 @@
       color: var(--text-primary-color);
     }
   </style>
+  
+  <!-- Mobile Menu Script -->
+  <script src="/js/mobile-menu.js" defer></script>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
   <div class="min-h-screen flex flex-col">
@@ -156,24 +159,55 @@
                  class="h-8 w-8 object-contain">
           
         
-        <h1 class="text-3xl font-bold tracking-tight">halunhaku&#39;s blog</h1>
+        <h1 class="text-2xl md:text-3xl font-bold tracking-tight">halunhaku&#39;s blog</h1>
       </div>
       
       <!-- Navigation -->
       <div class="flex items-center gap-2">
-        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-2">
           
-          <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
-             href="/">Home</a>
-        
+            
+            <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+               href="/">Home</a>
           
-          <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
-             href="/categories/">Categories</a>
-        
+            
+            <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+               href="/categories/">Categories</a>
           
-          <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
-             href="/tags/">Tags</a>
+            
+            <a class="px-4 py-2 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+               href="/tags/">Tags</a>
+          
+        </div>
         
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="p-2 rounded-md text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] hover:bg-[var(--secondary-color)] transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Navigation Menu -->
+      <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-[var(--background-color)] border-t border-[var(--border-color)] shadow-lg">
+        <div class="px-4 py-2 space-y-1">
+          
+            
+            <a class="block px-4 py-3 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+               href="/">Home</a>
+          
+            
+            <a class="block px-4 py-3 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+               href="/categories/">Categories</a>
+          
+            
+            <a class="block px-4 py-3 text-base font-medium rounded-md text-[var(--text-secondary-color)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" 
+               href="/tags/">Tags</a>
+          
+        </div>
       </div>
     </div>
   </div>
@@ -184,10 +218,13 @@
         <!-- Post Header -->
         <header class="mb-12">
           
-            <div class="w-full h-96 mb-8 rounded-lg overflow-hidden">
+            <div class="w-full mb-8 rounded-lg overflow-hidden bg-[var(--secondary-color)] post-cover-container">
               <img src="https://pic1.imgdb.cn/item/68843e7e58cb8da5c8e04528.png" 
                    alt="混凝土徐变多模型计算平台 creep_cal 项目介绍" 
-                   class="w-full h-full object-cover">
+                   class="w-full rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] post-cover-image"
+                   loading="lazy"
+                   onload="this.style.opacity='1'"
+                   style="opacity: 0; transition: opacity 0.3s ease;">
             </div>
           
           
@@ -195,7 +232,7 @@
             混凝土徐变多模型计算平台 creep_cal 项目介绍
           </h1>
           
-          <div class="flex items-center gap-6 text-[var(--text-secondary-color)] text-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-[var(--text-secondary-color)] text-sm">
             <time datetime="2025-07-10T08:00:00.000Z">
               July 10, 2025
             </time>
@@ -340,19 +377,19 @@
           </div>
           
           <!-- Navigation -->
-          <nav class="flex justify-between items-center">
+          <nav class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             
               <a href="/2025/07/26/hexo-theme-halunhaku-guide/" 
-                 class="flex items-center gap-2 text-[var(--primary-color)] hover:underline">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                 class="flex items-center gap-2 text-[var(--primary-color)] hover:underline max-w-full sm:max-w-[45%]">
+                <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
-                Previous: Hexo Theme Halunhaku - 现代简约博客主题完整指南
+                <span class="truncate">Previous: Hexo Theme Halunhaku - 现代简约博客主题完整指南</span>
               </a>
             
             
             
-              <div></div>
+              <div class="hidden sm:block"></div>
             
           </nav>
         </footer>
