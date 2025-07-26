@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.halunhaku.top/2025/07/10/creep_cal/</loc>
+    
+    <lastmod>2025-07-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.halunhaku.top/2025/07/26/hexo-theme-halunhaku-guide/</loc>
+    
+    <lastmod>2025-07-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.halunhaku.top/about/index.html</loc>
     
     <lastmod>2025-07-20</lastmod>
@@ -23,24 +41,6 @@
     <loc>https://blog.halunhaku.top/categories/index.html</loc>
     
     <lastmod>2025-07-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.halunhaku.top/2025/07/16/matplotlib_markers/</loc>
-    
-    <lastmod>2025-07-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.halunhaku.top/2025/07/10/creep_cal/</loc>
-    
-    <lastmod>2025-07-16</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -84,35 +84,42 @@
   </url>
   
   <url>
-    <loc>https://blog.halunhaku.top/tags/Matplotlib/</loc>
+    <loc>https://blog.halunhaku.top/tags/Hexo/</loc>
     <lastmod>2025-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.halunhaku.top/tags/Python/</loc>
+    <loc>https://blog.halunhaku.top/tags/Theme/</loc>
     <lastmod>2025-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.halunhaku.top/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</loc>
+    <loc>https://blog.halunhaku.top/tags/Blog/</loc>
     <lastmod>2025-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.halunhaku.top/tags/%E5%9B%BE%E8%A1%A8%E6%A0%87%E8%AE%B0/</loc>
+    <loc>https://blog.halunhaku.top/tags/Markdown/</loc>
     <lastmod>2025-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.halunhaku.top/tags/markers/</loc>
+    <loc>https://blog.halunhaku.top/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.halunhaku.top/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2025-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -128,7 +135,21 @@
   </url>
   
   <url>
-    <loc>https://blog.halunhaku.top/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://blog.halunhaku.top/categories/Hexo/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.halunhaku.top/categories/Hexo/%E4%B8%BB%E9%A2%98/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.halunhaku.top/categories/Hexo/%E4%B8%BB%E9%A2%98/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2025-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
