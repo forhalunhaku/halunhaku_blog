@@ -3,7 +3,7 @@
   'use strict';
 
   // Use a unique identifier to prevent duplicate processing
-  const COPY_BUTTON_CLASS = 'copy-btn';
+  const COPY_BUTTON_CLASS = 'halunhaku-copy-btn';
   const PROCESSED_FLAG = 'data-copy-processed';
 
   function initCopyButtons() {
@@ -22,12 +22,13 @@
       // Mark as processed immediately
       codeBlock.setAttribute(PROCESSED_FLAG, 'true');
 
-      // Create enhanced copy button
+      // Create enhanced copy button with unique identifier
       const copyBtn = document.createElement('button');
       copyBtn.className = COPY_BUTTON_CLASS;
       copyBtn.innerHTML = '📋';
       copyBtn.title = '复制代码';
       copyBtn.setAttribute('aria-label', '复制代码到剪贴板');
+      copyBtn.setAttribute('data-halunhaku-copy', 'true');
 
       // Enhanced click handler with better UX
       copyBtn.addEventListener('click', async function (e) {
