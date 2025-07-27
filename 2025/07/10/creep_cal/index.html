@@ -117,6 +117,11 @@
   </script>
   
   
+  <!-- Theme CSS -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
   <!-- Theme Colors -->
   <style type="text/tailwindcss">
     :root {
@@ -143,23 +148,29 @@
   
   <!-- Mobile Menu Script -->
   <script src="/js/mobile-menu.js" defer></script>
+  
+  <!-- Code Copy Script -->
+  <script src="/js/code-copy.js" defer></script>
+  
+  <!-- Reading Progress Script -->
+  <script src="/js/reading-progress.js" defer></script>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
   <div class="min-h-screen flex flex-col">
     <header class="sticky top-0 z-10 w-full bg-[var(--background-color)]/80 backdrop-blur-md">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-24 ">
+    <div class="flex items-center justify-between h-16 sm:h-20 lg:h-24 ">
       <!-- Logo and Title -->
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
         
           
             <!-- 自定义Logo -->
             <img src="/images/avatar.png" 
                  alt="halunhaku&#39;s blog" 
-                 class="h-8 w-8 object-contain">
+                 class="h-6 w-6 sm:h-8 sm:w-8 object-contain flex-shrink-0">
           
         
-        <h1 class="text-2xl md:text-3xl font-bold tracking-tight">halunhaku&#39;s blog</h1>
+        <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight truncate">halunhaku&#39;s blog</h1>
       </div>
       
       <!-- Navigation -->
@@ -182,8 +193,8 @@
         </div>
         
         <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-          <button id="mobile-menu-button" class="p-2 rounded-md text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] hover:bg-[var(--secondary-color)] transition-colors">
+        <div class="md:hidden flex-shrink-0">
+          <button id="mobile-menu-button" class="p-3 rounded-md text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] hover:bg-[var(--secondary-color)] transition-colors touch-manipulation">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -213,10 +224,12 @@
   </div>
 </header>
     
-    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
       <article class="max-w-4xl mx-auto">
         <!-- Post Header -->
-        <header class="mb-12">
+        <header class="mb-12 relative">
+          <!-- Decorative background -->
+          <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary-color)]/5 to-transparent rounded-2xl -z-10"></div>
           
             <div class="w-full mb-8 rounded-lg overflow-hidden bg-[var(--secondary-color)] post-cover-container">
               <img src="https://pic1.imgdb.cn/item/68843e7e58cb8da5c8e04528.png" 
@@ -228,64 +241,78 @@
             </div>
           
           
-          <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-            混凝土徐变多模型计算平台 creep_cal 项目介绍
-          </h1>
-          
-          <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-[var(--text-secondary-color)] text-sm">
+          <div class="relative z-10 p-6 sm:p-8">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6 bg-gradient-to-r from-[var(--text-primary-color)] to-[var(--primary-color)] bg-clip-text text-transparent">
+              混凝土徐变多模型计算平台 creep_cal 项目介绍
+            </h1>
+            
+            <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-[var(--text-secondary-color)] text-sm bg-[var(--background-color)]/80 backdrop-blur-sm rounded-lg p-4 border border-[var(--border-color)]/50">
             <time datetime="2025-07-10T08:00:00.000Z">
               July 10, 2025
             </time>
             
-            
-              <div class="flex items-center gap-2">
-                <span>in</span>
-                
-                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" 
-                     class="text-[var(--primary-color)] hover:underline">
-                    项目
-                  </a>
+              
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-[var(--primary-color)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
+                  </svg>
+                  <span>in</span>
                   
-                
-              </div>
-            
-            
-            
-              <div class="flex items-center gap-2">
-                <span>tagged</span>
-                
-                  <a href="/tags/%E5%B7%A5%E7%A8%8B/" 
-                     class="text-[var(--primary-color)] hover:underline">
-                    #工程
-                  </a>
-                  , 
-                
-                  <a href="/tags/%E5%89%8D%E7%AB%AF/" 
-                     class="text-[var(--primary-color)] hover:underline">
-                    #前端
-                  </a>
-                  , 
-                
-                  <a href="/tags/%E6%B7%B7%E5%87%9D%E5%9C%9F/" 
-                     class="text-[var(--primary-color)] hover:underline">
-                    #混凝土
-                  </a>
-                  , 
-                
-                  <a href="/tags/%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0/" 
-                     class="text-[var(--primary-color)] hover:underline">
-                    #计算平台
-                  </a>
+                    <a href="/categories/%E9%A1%B9%E7%9B%AE/" 
+                       class="text-[var(--primary-color)] hover:underline font-medium">
+                      项目
+                    </a>
+                    
                   
-                
-              </div>
-            
+                </div>
+              
+              
+              
+                <div class="flex items-center gap-2 flex-wrap">
+                  <svg class="w-4 h-4 text-[var(--primary-color)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+                  </svg>
+                  
+                    <a href="/tags/%E5%B7%A5%E7%A8%8B/" 
+                       class="text-[var(--primary-color)] hover:underline whitespace-nowrap font-medium">
+                      #工程
+                    </a>
+                    , 
+                  
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/" 
+                       class="text-[var(--primary-color)] hover:underline whitespace-nowrap font-medium">
+                      #前端
+                    </a>
+                    , 
+                  
+                    <a href="/tags/%E6%B7%B7%E5%87%9D%E5%9C%9F/" 
+                       class="text-[var(--primary-color)] hover:underline whitespace-nowrap font-medium">
+                      #混凝土
+                    </a>
+                    , 
+                  
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0/" 
+                       class="text-[var(--primary-color)] hover:underline whitespace-nowrap font-medium">
+                      #计算平台
+                    </a>
+                    
+                  
+                </div>
+              
+            </div>
           </div>
         </header>
         
         <!-- Post Content -->
-        <div class="prose prose-lg max-w-none">
-          <h1 id="🏗️-混凝土徐变多模型计算平台-creep-cal"><a href="#🏗️-混凝土徐变多模型计算平台-creep-cal" class="headerlink" title="🏗️ 混凝土徐变多模型计算平台 creep_cal"></a>🏗️ 混凝土徐变多模型计算平台 creep_cal</h1><blockquote>
+        <div class="prose prose-lg max-w-none relative">
+          <!-- Reading progress indicator -->
+          <div class="reading-progress-container">
+            <div class="reading-progress-bar"></div>
+          </div>
+          
+          <!-- Content with enhanced styling -->
+          <div class="content-wrapper bg-[var(--background-color)] rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm border border-[var(--border-color)]/30">
+            <h1 id="🏗️-混凝土徐变多模型计算平台-creep-cal"><a href="#🏗️-混凝土徐变多模型计算平台-creep-cal" class="headerlink" title="🏗️ 混凝土徐变多模型计算平台 creep_cal"></a>🏗️ 混凝土徐变多模型计算平台 creep_cal</h1><blockquote>
 <p>🚀 一站式徐变计算 · 多模型切换 · 批量导入导出 · 响应式 · 深色模式</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/forhalunhaku/creep_cal"><img src="https://img.shields.io/github/stars/forhalunhaku/creep_cal?style=social" alt="GitHub stars"></a><br><a target="_blank" rel="noopener" href="https://creep.halunhaku.top/"><img src="https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E4%BD%93%E9%AA%8C-creep.halunhaku.top-brightgreen" alt="在线体验"></a></p>
@@ -312,7 +339,10 @@
 </ul>
 <hr>
 <h2 id="🚦-快速开始"><a href="#🚦-快速开始" class="headerlink" title="🚦 快速开始"></a>🚦 快速开始</h2><ol>
-<li>克隆仓库并安装依赖<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/forhalunhaku/creep_cal.git</span><br><span class="line"><span class="built_in">cd</span> creep_cal</span><br><span class="line">npm install</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure></li>
+<li>克隆仓库并安装依赖<pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/forhalunhaku/creep_cal.git
+<span class="hljs-built_in">cd</span> creep_cal
+npm install
+npm start</code></pre></li>
 <li>访问本地开发环境或直接体验线上版本：<a target="_blank" rel="noopener" href="https://creep.halunhaku.top/">creep.halunhaku.top</a></li>
 </ol>
 <hr>
@@ -346,50 +376,68 @@
 <p>让混凝土徐变计算更高效、更美观、更易用！ </p>
 </blockquote>
 
+          </div>
         </div>
         
         <!-- Post Footer -->
-        <footer class="mt-16 pt-8 border-t border-[var(--border-color)]">
-          <div class="flex flex-wrap gap-2 mb-8">
-            
+        <footer class="mt-16 pt-8 relative">
+          <!-- Decorative divider -->
+          <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent rounded-full"></div>
+          
+          <!-- Enhanced tags section -->
+          <div class="bg-gradient-to-r from-[var(--secondary-color)]/50 to-transparent rounded-2xl p-6 mb-8">
+            <h3 class="text-lg font-semibold mb-4 text-[var(--text-primary-color)] flex items-center gap-2">
+              <svg class="w-5 h-5 text-[var(--primary-color)]" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+              </svg>
+              Tags
+            </h3>
+            <div class="flex flex-wrap gap-3">
               
-                <a href="/tags/%E5%B7%A5%E7%A8%8B/" 
-                   class="px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-primary-color)] text-sm rounded-full hover:bg-[var(--primary-color)] hover:text-white transition-colors">
-                  工程
-                </a>
+                
+                  <a href="/tags/%E5%B7%A5%E7%A8%8B/" 
+                     class="px-4 py-2 bg-[var(--background-color)] text-[var(--text-primary-color)] text-sm rounded-full border border-[var(--border-color)] hover:bg-[var(--primary-color)] hover:text-white hover:border-[var(--primary-color)] transition-all duration-300 whitespace-nowrap shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                    工程
+                  </a>
+                
+                  <a href="/tags/%E5%89%8D%E7%AB%AF/" 
+                     class="px-4 py-2 bg-[var(--background-color)] text-[var(--text-primary-color)] text-sm rounded-full border border-[var(--border-color)] hover:bg-[var(--primary-color)] hover:text-white hover:border-[var(--primary-color)] transition-all duration-300 whitespace-nowrap shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                    前端
+                  </a>
+                
+                  <a href="/tags/%E6%B7%B7%E5%87%9D%E5%9C%9F/" 
+                     class="px-4 py-2 bg-[var(--background-color)] text-[var(--text-primary-color)] text-sm rounded-full border border-[var(--border-color)] hover:bg-[var(--primary-color)] hover:text-white hover:border-[var(--primary-color)] transition-all duration-300 whitespace-nowrap shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                    混凝土
+                  </a>
+                
+                  <a href="/tags/%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0/" 
+                     class="px-4 py-2 bg-[var(--background-color)] text-[var(--text-primary-color)] text-sm rounded-full border border-[var(--border-color)] hover:bg-[var(--primary-color)] hover:text-white hover:border-[var(--primary-color)] transition-all duration-300 whitespace-nowrap shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                    计算平台
+                  </a>
+                
               
-                <a href="/tags/%E5%89%8D%E7%AB%AF/" 
-                   class="px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-primary-color)] text-sm rounded-full hover:bg-[var(--primary-color)] hover:text-white transition-colors">
-                  前端
-                </a>
-              
-                <a href="/tags/%E6%B7%B7%E5%87%9D%E5%9C%9F/" 
-                   class="px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-primary-color)] text-sm rounded-full hover:bg-[var(--primary-color)] hover:text-white transition-colors">
-                  混凝土
-                </a>
-              
-                <a href="/tags/%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0/" 
-                   class="px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-primary-color)] text-sm rounded-full hover:bg-[var(--primary-color)] hover:text-white transition-colors">
-                  计算平台
-                </a>
-              
-            
+            </div>
           </div>
           
-          <!-- Navigation -->
-          <nav class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <!-- Enhanced Navigation -->
+          <nav class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             
               <a href="/2025/07/26/hexo-theme-halunhaku-guide/" 
-                 class="flex items-center gap-2 text-[var(--primary-color)] hover:underline max-w-full sm:max-w-[45%]">
-                <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="truncate">Previous: Hexo Theme Halunhaku - 现代简约博客主题完整指南</span>
+                 class="group p-6 bg-[var(--background-color)] border border-[var(--border-color)] rounded-xl hover:border-[var(--primary-color)] transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                <div class="flex items-center gap-3 mb-2">
+                  <svg class="w-5 h-5 text-[var(--primary-color)] group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-sm text-[var(--text-secondary-color)] font-medium">Previous Article</span>
+                </div>
+                <h4 class="text-[var(--text-primary-color)] font-semibold group-hover:text-[var(--primary-color)] transition-colors line-clamp-2">
+                  Hexo Theme Halunhaku - 现代简约博客主题完整指南
+                </h4>
               </a>
             
             
             
-              <div class="hidden sm:block"></div>
+              <div></div>
             
           </nav>
         </footer>

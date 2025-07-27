@@ -75,6 +75,11 @@
   </script>
   
   
+  <!-- Theme CSS -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
   <!-- Theme Colors -->
   <style type="text/tailwindcss">
     :root {
@@ -101,24 +106,30 @@
   
   <!-- Mobile Menu Script -->
   <script src="/js/mobile-menu.js" defer></script>
+  
+  <!-- Code Copy Script -->
+  <script src="/js/code-copy.js" defer></script>
+  
+  <!-- Reading Progress Script -->
+  <script src="/js/reading-progress.js" defer></script>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body class="bg-[var(--background-color)]">
   <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
     <div class="layout-container flex h-full grow flex-col">
       <header class="sticky top-0 z-10 w-full bg-[var(--background-color)]/80 backdrop-blur-md">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-24 ">
+    <div class="flex items-center justify-between h-16 sm:h-20 lg:h-24 ">
       <!-- Logo and Title -->
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
         
           
             <!-- 自定义Logo -->
             <img src="/images/avatar.png" 
                  alt="halunhaku&#39;s blog" 
-                 class="h-8 w-8 object-contain">
+                 class="h-6 w-6 sm:h-8 sm:w-8 object-contain flex-shrink-0">
           
         
-        <h1 class="text-2xl md:text-3xl font-bold tracking-tight">halunhaku&#39;s blog</h1>
+        <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight truncate">halunhaku&#39;s blog</h1>
       </div>
       
       <!-- Navigation -->
@@ -141,8 +152,8 @@
         </div>
         
         <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-          <button id="mobile-menu-button" class="p-2 rounded-md text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] hover:bg-[var(--secondary-color)] transition-colors">
+        <div class="md:hidden flex-shrink-0">
+          <button id="mobile-menu-button" class="p-3 rounded-md text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] hover:bg-[var(--secondary-color)] transition-colors touch-manipulation">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>

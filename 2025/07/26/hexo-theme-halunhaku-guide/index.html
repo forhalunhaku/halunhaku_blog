@@ -110,6 +110,11 @@
   </script>
   
   
+  <!-- Theme CSS -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
   <!-- Theme Colors -->
   <style type="text/tailwindcss">
     :root {
@@ -136,23 +141,29 @@
   
   <!-- Mobile Menu Script -->
   <script src="/js/mobile-menu.js" defer></script>
+  
+  <!-- Code Copy Script -->
+  <script src="/js/code-copy.js" defer></script>
+  
+  <!-- Reading Progress Script -->
+  <script src="/js/reading-progress.js" defer></script>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
   <div class="min-h-screen flex flex-col">
     <header class="sticky top-0 z-10 w-full bg-[var(--background-color)]/80 backdrop-blur-md">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-24 ">
+    <div class="flex items-center justify-between h-16 sm:h-20 lg:h-24 ">
       <!-- Logo and Title -->
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
         
           
             <!-- 自定义Logo -->
             <img src="/images/avatar.png" 
                  alt="halunhaku&#39;s blog" 
-                 class="h-8 w-8 object-contain">
+                 class="h-6 w-6 sm:h-8 sm:w-8 object-contain flex-shrink-0">
           
         
-        <h1 class="text-2xl md:text-3xl font-bold tracking-tight">halunhaku&#39;s blog</h1>
+        <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight truncate">halunhaku&#39;s blog</h1>
       </div>
       
       <!-- Navigation -->
@@ -175,8 +186,8 @@
         </div>
         
         <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-          <button id="mobile-menu-button" class="p-2 rounded-md text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] hover:bg-[var(--secondary-color)] transition-colors">
+        <div class="md:hidden flex-shrink-0">
+          <button id="mobile-menu-button" class="p-3 rounded-md text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] hover:bg-[var(--secondary-color)] transition-colors touch-manipulation">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -206,10 +217,12 @@
   </div>
 </header>
     
-    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
       <article class="max-w-4xl mx-auto">
         <!-- Post Header -->
-        <header class="mb-12">
+        <header class="mb-12 relative">
+          <!-- Decorative background -->
+          <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary-color)]/5 to-transparent rounded-2xl -z-10"></div>
           
             <div class="w-full mb-8 rounded-lg overflow-hidden bg-[var(--secondary-color)] post-cover-container">
               <img src="https://pic1.imgdb.cn/item/688441b558cb8da5c8e0520b.png" 
@@ -221,88 +234,102 @@
             </div>
           
           
-          <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-            Hexo Theme Halunhaku - 现代简约博客主题完整指南
-          </h1>
-          
-          <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-[var(--text-secondary-color)] text-sm">
+          <div class="relative z-10 p-6 sm:p-8">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6 bg-gradient-to-r from-[var(--text-primary-color)] to-[var(--primary-color)] bg-clip-text text-transparent">
+              Hexo Theme Halunhaku - 现代简约博客主题完整指南
+            </h1>
+            
+            <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-[var(--text-secondary-color)] text-sm bg-[var(--background-color)]/80 backdrop-blur-sm rounded-lg p-4 border border-[var(--border-color)]/50">
             <time datetime="2025-07-26T02:00:00.000Z">
               July 26, 2025
             </time>
             
-            
-              <div class="flex items-center gap-2">
-                <span>in</span>
-                
-                  <a href="/categories/Hexo/" 
-                     class="text-[var(--primary-color)] hover:underline">
-                    Hexo
-                  </a>
-                  , 
-                
-                  <a href="/categories/Hexo/%E4%B8%BB%E9%A2%98/" 
-                     class="text-[var(--primary-color)] hover:underline">
-                    主题
-                  </a>
-                  , 
-                
-                  <a href="/categories/Hexo/%E4%B8%BB%E9%A2%98/%E6%95%99%E7%A8%8B/" 
-                     class="text-[var(--primary-color)] hover:underline">
-                    教程
-                  </a>
+              
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-[var(--primary-color)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
+                  </svg>
+                  <span>in</span>
                   
-                
-              </div>
-            
-            
-            
-              <div class="flex items-center gap-2">
-                <span>tagged</span>
-                
-                  <a href="/tags/Hexo/" 
-                     class="text-[var(--primary-color)] hover:underline">
-                    #Hexo
-                  </a>
-                  , 
-                
-                  <a href="/tags/Theme/" 
-                     class="text-[var(--primary-color)] hover:underline">
-                    #Theme
-                  </a>
-                  , 
-                
-                  <a href="/tags/Blog/" 
-                     class="text-[var(--primary-color)] hover:underline">
-                    #Blog
-                  </a>
-                  , 
-                
-                  <a href="/tags/Markdown/" 
-                     class="text-[var(--primary-color)] hover:underline">
-                    #Markdown
-                  </a>
-                  , 
-                
-                  <a href="/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/" 
-                     class="text-[var(--primary-color)] hover:underline">
-                    #响应式设计
-                  </a>
-                  , 
-                
-                  <a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" 
-                     class="text-[var(--primary-color)] hover:underline">
-                    #前端开发
-                  </a>
+                    <a href="/categories/Hexo/" 
+                       class="text-[var(--primary-color)] hover:underline font-medium">
+                      Hexo
+                    </a>
+                    , 
                   
-                
-              </div>
-            
+                    <a href="/categories/Hexo/%E4%B8%BB%E9%A2%98/" 
+                       class="text-[var(--primary-color)] hover:underline font-medium">
+                      主题
+                    </a>
+                    , 
+                  
+                    <a href="/categories/Hexo/%E4%B8%BB%E9%A2%98/%E6%95%99%E7%A8%8B/" 
+                       class="text-[var(--primary-color)] hover:underline font-medium">
+                      教程
+                    </a>
+                    
+                  
+                </div>
+              
+              
+              
+                <div class="flex items-center gap-2 flex-wrap">
+                  <svg class="w-4 h-4 text-[var(--primary-color)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+                  </svg>
+                  
+                    <a href="/tags/Hexo/" 
+                       class="text-[var(--primary-color)] hover:underline whitespace-nowrap font-medium">
+                      #Hexo
+                    </a>
+                    , 
+                  
+                    <a href="/tags/Theme/" 
+                       class="text-[var(--primary-color)] hover:underline whitespace-nowrap font-medium">
+                      #Theme
+                    </a>
+                    , 
+                  
+                    <a href="/tags/Blog/" 
+                       class="text-[var(--primary-color)] hover:underline whitespace-nowrap font-medium">
+                      #Blog
+                    </a>
+                    , 
+                  
+                    <a href="/tags/Markdown/" 
+                       class="text-[var(--primary-color)] hover:underline whitespace-nowrap font-medium">
+                      #Markdown
+                    </a>
+                    , 
+                  
+                    <a href="/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/" 
+                       class="text-[var(--primary-color)] hover:underline whitespace-nowrap font-medium">
+                      #响应式设计
+                    </a>
+                    , 
+                  
+                    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" 
+                       class="text-[var(--primary-color)] hover:underline whitespace-nowrap font-medium">
+                      #前端开发
+                    </a>
+                    
+                  
+                </div>
+              
+            </div>
           </div>
         </header>
         
         <!-- Post Content -->
-        <div class="prose prose-lg max-w-none">
-          <h1 id="Hexo-Theme-Halunhaku-现代简约博客主题"><a href="#Hexo-Theme-Halunhaku-现代简约博客主题" class="headerlink" title="Hexo Theme Halunhaku - 现代简约博客主题"></a>Hexo Theme Halunhaku - 现代简约博客主题</h1><p>一个为 Hexo 博客系统设计的现代化、简约风格主题，专注于优雅的排版和出色的阅读体验。</p>
+        <div class="prose prose-lg max-w-none relative">
+          <!-- Reading progress indicator -->
+          <div class="reading-progress-container">
+            <div class="reading-progress-bar"></div>
+          </div>
+          
+          <!-- Content with enhanced styling -->
+          <div class="content-wrapper bg-[var(--background-color)] rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm border border-[var(--border-color)]/30">
+            <h1 id="Hexo-Theme-Halunhaku-现代简约博客主题"><a href="#Hexo-Theme-Halunhaku-现代简约博客主题" class="headerlink" title="Hexo Theme Halunhaku - 现代简约博客主题"></a>Hexo Theme Halunhaku - 现代简约博客主题</h1><p>一个为 Hexo 博客系统设计的现代化、简约风格主题，专注于优雅的排版和出色的阅读体验。</p>
 <h2 id="✨-主题特色"><a href="#✨-主题特色" class="headerlink" title="✨ 主题特色"></a>✨ 主题特色</h2><h3 id="🎨-现代设计"><a href="#🎨-现代设计" class="headerlink" title="🎨 现代设计"></a>🎨 现代设计</h3><ul>
 <li><strong>简约美学</strong>：干净的界面设计，专注于内容本身</li>
 <li><strong>优雅排版</strong>：使用 Newsreader 字体，提供卓越的阅读体验</li>
@@ -320,57 +347,178 @@
 <li><strong>SEO 友好</strong>：完整的 meta 标签和结构化数据</li>
 <li><strong>图片优化</strong>：自动图片懒加载和优化</li>
 </ul>
-<h2 id="🛠️-安装指南"><a href="#🛠️-安装指南" class="headerlink" title="🛠️ 安装指南"></a>🛠️ 安装指南</h2><h3 id="方法一：Git-Clone（推荐）"><a href="#方法一：Git-Clone（推荐）" class="headerlink" title="方法一：Git Clone（推荐）"></a>方法一：Git Clone（推荐）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> your-hexo-site</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/forhalunhaku/hexo-theme-halunhaku.git themes/halunhaku</span><br></pre></td></tr></table></figure>
+<h2 id="🛠️-安装指南"><a href="#🛠️-安装指南" class="headerlink" title="🛠️ 安装指南"></a>🛠️ 安装指南</h2><h3 id="方法一：Git-Clone（推荐）"><a href="#方法一：Git-Clone（推荐）" class="headerlink" title="方法一：Git Clone（推荐）"></a>方法一：Git Clone（推荐）</h3><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> your-hexo-site
+git <span class="hljs-built_in">clone</span> https://github.com/forhalunhaku/hexo-theme-halunhaku.git themes/halunhaku</code></pre>
 
 <h3 id="方法二：下载压缩包"><a href="#方法二：下载压缩包" class="headerlink" title="方法二：下载压缩包"></a>方法二：下载压缩包</h3><ol>
 <li>从 <a target="_blank" rel="noopener" href="https://github.com/forhalunhaku/hexo-theme-halunhaku/releases">GitHub Releases</a> 下载最新版本</li>
 <li>解压到 <code>themes/halunhaku</code> 目录</li>
 </ol>
 <h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>在你的 Hexo 站点根目录的 <code>_config.yml</code> 中设置：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">halunhaku</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">halunhaku</span></code></pre>
 
 <h2 id="⚙️-配置说明"><a href="#⚙️-配置说明" class="headerlink" title="⚙️ 配置说明"></a>⚙️ 配置说明</h2><h3 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h3><p>复制主题配置文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> themes/halunhaku/_config.example.yml themes/halunhaku/_config.yml</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">cp</span> themes/halunhaku/_config.example.yml themes/halunhaku/_config.yml</code></pre>
 
-<h3 id="主要配置选项"><a href="#主要配置选项" class="headerlink" title="主要配置选项"></a>主要配置选项</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 站点信息</span></span><br><span class="line"><span class="attr">site:</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">&quot;你的博客标题&quot;</span></span><br><span class="line">  <span class="attr">subtitle:</span> <span class="string">&quot;博客副标题&quot;</span></span><br><span class="line">  <span class="attr">description:</span> <span class="string">&quot;博客描述&quot;</span></span><br><span class="line">  <span class="attr">author:</span> <span class="string">&quot;作者名称&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导航菜单</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">首页:</span> <span class="string">/</span></span><br><span class="line">  <span class="string">归档:</span> <span class="string">/archives/</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories/</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags/</span></span><br><span class="line">  <span class="string">关于:</span> <span class="string">/about/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 社交链接</span></span><br><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/yourusername</span></span><br><span class="line">  <span class="attr">Twitter:</span> <span class="string">https://twitter.com/yourusername</span></span><br><span class="line">  <span class="attr">Email:</span> <span class="string">mailto:your@email.com</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 颜色方案</span></span><br><span class="line"><span class="attr">color_schemes:</span></span><br><span class="line">  <span class="attr">home:</span></span><br><span class="line">    <span class="attr">primary_color:</span> <span class="string">&quot;#0c7ff2&quot;</span></span><br><span class="line">    <span class="attr">secondary_color:</span> <span class="string">&quot;#f8fafc&quot;</span></span><br><span class="line">    <span class="attr">background_color:</span> <span class="string">&quot;#ffffff&quot;</span></span><br><span class="line">    <span class="attr">text_primary_color:</span> <span class="string">&quot;#1f2937&quot;</span></span><br><span class="line">    <span class="attr">text_secondary_color:</span> <span class="string">&quot;#6b7280&quot;</span></span><br><span class="line">    <span class="attr">border_color:</span> <span class="string">&quot;#e5e7eb&quot;</span></span><br><span class="line">  </span><br><span class="line">  <span class="attr">post:</span></span><br><span class="line">    <span class="attr">primary_color:</span> <span class="string">&quot;#0c7ff2&quot;</span></span><br><span class="line">    <span class="attr">secondary_color:</span> <span class="string">&quot;#f1f5f9&quot;</span></span><br><span class="line">    <span class="attr">background_color:</span> <span class="string">&quot;#ffffff&quot;</span></span><br><span class="line">    <span class="attr">text_primary_color:</span> <span class="string">&quot;#0f172a&quot;</span></span><br><span class="line">    <span class="attr">text_secondary_color:</span> <span class="string">&quot;#475569&quot;</span></span><br><span class="line">    <span class="attr">border_color:</span> <span class="string">&quot;#cbd5e1&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 功能开关</span></span><br><span class="line"><span class="attr">features:</span></span><br><span class="line">  <span class="comment"># 代码高亮</span></span><br><span class="line">  <span class="attr">highlight:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 数学公式</span></span><br><span class="line">  <span class="attr">math:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># 图片懒加载</span></span><br><span class="line">  <span class="attr">lazyload:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 阅读进度条</span></span><br><span class="line">  <span class="attr">reading_progress:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h3 id="主要配置选项"><a href="#主要配置选项" class="headerlink" title="主要配置选项"></a>主要配置选项</h3><pre><code class="hljs yaml"><span class="hljs-comment"># 站点信息</span>
+<span class="hljs-attr">site:</span>
+  <span class="hljs-attr">title:</span> <span class="hljs-string">&quot;你的博客标题&quot;</span>
+  <span class="hljs-attr">subtitle:</span> <span class="hljs-string">&quot;博客副标题&quot;</span>
+  <span class="hljs-attr">description:</span> <span class="hljs-string">&quot;博客描述&quot;</span>
+  <span class="hljs-attr">author:</span> <span class="hljs-string">&quot;作者名称&quot;</span>
+
+<span class="hljs-comment"># 导航菜单</span>
+<span class="hljs-attr">menu:</span>
+  <span class="hljs-string">首页:</span> <span class="hljs-string">/</span>
+  <span class="hljs-string">归档:</span> <span class="hljs-string">/archives/</span>
+  <span class="hljs-string">分类:</span> <span class="hljs-string">/categories/</span>
+  <span class="hljs-string">标签:</span> <span class="hljs-string">/tags/</span>
+  <span class="hljs-string">关于:</span> <span class="hljs-string">/about/</span>
+
+<span class="hljs-comment"># 社交链接</span>
+<span class="hljs-attr">social:</span>
+  <span class="hljs-attr">GitHub:</span> <span class="hljs-string">https://github.com/yourusername</span>
+  <span class="hljs-attr">Twitter:</span> <span class="hljs-string">https://twitter.com/yourusername</span>
+  <span class="hljs-attr">Email:</span> <span class="hljs-string">mailto:your@email.com</span>
+
+<span class="hljs-comment"># 颜色方案</span>
+<span class="hljs-attr">color_schemes:</span>
+  <span class="hljs-attr">home:</span>
+    <span class="hljs-attr">primary_color:</span> <span class="hljs-string">&quot;#0c7ff2&quot;</span>
+    <span class="hljs-attr">secondary_color:</span> <span class="hljs-string">&quot;#f8fafc&quot;</span>
+    <span class="hljs-attr">background_color:</span> <span class="hljs-string">&quot;#ffffff&quot;</span>
+    <span class="hljs-attr">text_primary_color:</span> <span class="hljs-string">&quot;#1f2937&quot;</span>
+    <span class="hljs-attr">text_secondary_color:</span> <span class="hljs-string">&quot;#6b7280&quot;</span>
+    <span class="hljs-attr">border_color:</span> <span class="hljs-string">&quot;#e5e7eb&quot;</span>
+  
+  <span class="hljs-attr">post:</span>
+    <span class="hljs-attr">primary_color:</span> <span class="hljs-string">&quot;#0c7ff2&quot;</span>
+    <span class="hljs-attr">secondary_color:</span> <span class="hljs-string">&quot;#f1f5f9&quot;</span>
+    <span class="hljs-attr">background_color:</span> <span class="hljs-string">&quot;#ffffff&quot;</span>
+    <span class="hljs-attr">text_primary_color:</span> <span class="hljs-string">&quot;#0f172a&quot;</span>
+    <span class="hljs-attr">text_secondary_color:</span> <span class="hljs-string">&quot;#475569&quot;</span>
+    <span class="hljs-attr">border_color:</span> <span class="hljs-string">&quot;#cbd5e1&quot;</span>
+
+<span class="hljs-comment"># 功能开关</span>
+<span class="hljs-attr">features:</span>
+  <span class="hljs-comment"># 代码高亮</span>
+  <span class="hljs-attr">highlight:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-comment"># 数学公式</span>
+  <span class="hljs-attr">math:</span> <span class="hljs-literal">false</span>
+  <span class="hljs-comment"># 图片懒加载</span>
+  <span class="hljs-attr">lazyload:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-comment"># 阅读进度条</span>
+  <span class="hljs-attr">reading_progress:</span> <span class="hljs-literal">true</span></code></pre>
 
 <h2 id="🎨-自定义样式"><a href="#🎨-自定义样式" class="headerlink" title="🎨 自定义样式"></a>🎨 自定义样式</h2><h3 id="颜色主题"><a href="#颜色主题" class="headerlink" title="颜色主题"></a>颜色主题</h3><p>主题支持完全自定义的颜色方案。你可以为不同页面类型设置不同的颜色：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">color_schemes:</span></span><br><span class="line">  <span class="comment"># 首页颜色</span></span><br><span class="line">  <span class="attr">home:</span></span><br><span class="line">    <span class="attr">primary_color:</span> <span class="string">&quot;#your-color&quot;</span></span><br><span class="line">    <span class="comment"># ... 其他颜色</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment"># 文章页颜色</span></span><br><span class="line">  <span class="attr">post:</span></span><br><span class="line">    <span class="attr">primary_color:</span> <span class="string">&quot;#your-color&quot;</span></span><br><span class="line">    <span class="comment"># ... 其他颜色</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment"># 归档页颜色</span></span><br><span class="line">  <span class="attr">archive:</span></span><br><span class="line">    <span class="attr">primary_color:</span> <span class="string">&quot;#your-color&quot;</span></span><br><span class="line">    <span class="comment"># ... 其他颜色</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs yaml"><span class="hljs-attr">color_schemes:</span>
+  <span class="hljs-comment"># 首页颜色</span>
+  <span class="hljs-attr">home:</span>
+    <span class="hljs-attr">primary_color:</span> <span class="hljs-string">&quot;#your-color&quot;</span>
+    <span class="hljs-comment"># ... 其他颜色</span>
+  
+  <span class="hljs-comment"># 文章页颜色</span>
+  <span class="hljs-attr">post:</span>
+    <span class="hljs-attr">primary_color:</span> <span class="hljs-string">&quot;#your-color&quot;</span>
+    <span class="hljs-comment"># ... 其他颜色</span>
+  
+  <span class="hljs-comment"># 归档页颜色</span>
+  <span class="hljs-attr">archive:</span>
+    <span class="hljs-attr">primary_color:</span> <span class="hljs-string">&quot;#your-color&quot;</span>
+    <span class="hljs-comment"># ... 其他颜色</span></code></pre>
 
 <h3 id="自定义-CSS"><a href="#自定义-CSS" class="headerlink" title="自定义 CSS"></a>自定义 CSS</h3><p>在 <code>themes/halunhaku/source/css/</code> 目录下创建 <code>custom.css</code>：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 自定义样式 */</span></span><br><span class="line"><span class="selector-class">.custom-class</span> &#123;</span><br><span class="line">  <span class="comment">/* 你的样式 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs css"><span class="hljs-comment">/* 自定义样式 */</span>
+<span class="hljs-selector-class">.custom-class</span> &#123;
+  <span class="hljs-comment">/* 你的样式 */</span>
+&#125;</code></pre>
 
 <h2 id="📝-写作指南"><a href="#📝-写作指南" class="headerlink" title="📝 写作指南"></a>📝 写作指南</h2><h3 id="Markdown-支持"><a href="#Markdown-支持" class="headerlink" title="Markdown 支持"></a>Markdown 支持</h3><p>主题完全支持标准 Markdown 语法，并提供了增强的样式：</p>
-<h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br></pre></td></tr></table></figure>
+<h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><pre><code class="hljs markdown"><span class="hljs-section"># 一级标题</span>
+<span class="hljs-section">## 二级标题</span>
+<span class="hljs-section">### 三级标题</span></code></pre>
 
-<h4 id="强调文本"><a href="#强调文本" class="headerlink" title="强调文本"></a>强调文本</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">**粗体文本**</span></span><br><span class="line"><span class="emphasis">*斜体文本*</span></span><br><span class="line">~~删除线~~</span><br><span class="line">==高亮文本==</span><br></pre></td></tr></table></figure>
+<h4 id="强调文本"><a href="#强调文本" class="headerlink" title="强调文本"></a>强调文本</h4><pre><code class="hljs markdown"><span class="hljs-strong">**粗体文本**</span>
+<span class="hljs-emphasis">*斜体文本*</span>
+~~删除线~~
+==高亮文本==</code></pre>
 
-<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> 无序列表项 1</span><br><span class="line"><span class="bullet">-</span> 无序列表项 2</span><br><span class="line"><span class="bullet">  -</span> 嵌套列表项</span><br><span class="line"></span><br><span class="line"><span class="bullet">1.</span> 有序列表项 1</span><br><span class="line"><span class="bullet">2.</span> 有序列表项 2</span><br></pre></td></tr></table></figure>
+<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><pre><code class="hljs markdown"><span class="hljs-bullet">-</span> 无序列表项 1
+<span class="hljs-bullet">-</span> 无序列表项 2
+<span class="hljs-bullet">  -</span> 嵌套列表项
 
-<h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> [x] 已完成任务</span><br><span class="line"><span class="bullet">-</span> [ ] 未完成任务</span><br></pre></td></tr></table></figure>
+<span class="hljs-bullet">1.</span> 有序列表项 1
+<span class="hljs-bullet">2.</span> 有序列表项 2</code></pre>
 
-<h4 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 这是一个引用块</span></span><br><span class="line"><span class="quote">&gt; 支持多行引用</span></span><br></pre></td></tr></table></figure>
+<h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><pre><code class="hljs markdown"><span class="hljs-bullet">-</span> [x] 已完成任务
+<span class="hljs-bullet">-</span> [ ] 未完成任务</code></pre>
 
-<h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">```javascript</span></span><br><span class="line"><span class="code">function hello() &#123;</span></span><br><span class="line"><span class="code">  console.log(&quot;Hello, World!&quot;);</span></span><br><span class="line"><span class="code">&#125;</span></span><br><span class="line"><span class="code">```</span></span><br></pre></td></tr></table></figure>
+<h4 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h4><pre><code class="hljs markdown"><span class="hljs-quote">&gt; 这是一个引用块</span>
+<span class="hljs-quote">&gt; 支持多行引用</span></code></pre>
 
-<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">| 列1 | 列2 | 列3 |</span><br><span class="line">|-----|-----|-----|</span><br><span class="line">| 数据1 | 数据2 | 数据3 |</span><br></pre></td></tr></table></figure>
+<h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h4><pre><code class="hljs markdown"><span class="hljs-code">```javascript</span>
+<span class="hljs-code">function hello() &#123;</span>
+<span class="hljs-code">  console.log(&quot;Hello, World!&quot;);</span>
+<span class="hljs-code">&#125;</span>
+<span class="hljs-code">```</span></code></pre>
 
-<h4 id="链接和图片"><a href="#链接和图片" class="headerlink" title="链接和图片"></a>链接和图片</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">链接文本</span>](<span class="link">https://example.com</span>)</span><br><span class="line">![<span class="string">图片描述</span>](<span class="link">image-url.jpg</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><pre><code class="hljs markdown">| 列1 | 列2 | 列3 |
+|-----|-----|-----|
+| 数据1 | 数据2 | 数据3 |</code></pre>
+
+<h4 id="链接和图片"><a href="#链接和图片" class="headerlink" title="链接和图片"></a>链接和图片</h4><pre><code class="hljs markdown">[<span class="hljs-string">链接文本</span>](<span class="hljs-link">https://example.com</span>)
+![<span class="hljs-string">图片描述</span>](<span class="hljs-link">image-url.jpg</span>)</code></pre>
 
 <h3 id="Front-Matter"><a href="#Front-Matter" class="headerlink" title="Front Matter"></a>Front Matter</h3><p>文章头部信息示例：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">&quot;文章标题&quot;</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2024-01-01 12:00:00</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">分类名称</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">标签1</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">标签2</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&quot;文章描述&quot;</span></span><br><span class="line"><span class="attr">cover:</span> <span class="string">&quot;封面图片URL&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&quot;文章标题&quot;</span>
+<span class="hljs-attr">date:</span> <span class="hljs-number">2024-01-01 12:00:00</span>
+<span class="hljs-attr">categories:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">分类名称</span>
+<span class="hljs-attr">tags:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">标签1</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">标签2</span>
+<span class="hljs-attr">description:</span> <span class="hljs-string">&quot;文章描述&quot;</span>
+<span class="hljs-attr">cover:</span> <span class="hljs-string">&quot;封面图片URL&quot;</span>
+<span class="hljs-meta">---</span></code></pre>
 
 <h2 id="🔧-高级功能"><a href="#🔧-高级功能" class="headerlink" title="🔧 高级功能"></a>🔧 高级功能</h2><h3 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h3><p>启用数学公式支持：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># _config.yml</span></span><br><span class="line"><span class="attr">features:</span></span><br><span class="line">  <span class="attr">math:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs yaml"><span class="hljs-comment"># _config.yml</span>
+<span class="hljs-attr">features:</span>
+  <span class="hljs-attr">math:</span> <span class="hljs-literal">true</span></code></pre>
 
 <p>使用示例：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">行内公式：$E = mc^2$</span><br><span class="line"></span><br><span class="line">块级公式：</span><br><span class="line">$$</span><br><span class="line">\int<span class="emphasis">_&#123;-\infty&#125;^&#123;\infty&#125; e^&#123;-x^2&#125; dx = \sqrt&#123;\pi&#125;</span></span><br><span class="line"><span class="emphasis">$$</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs markdown">行内公式：$E = mc^2$
+
+块级公式：
+$$
+\int<span class="hljs-emphasis">_&#123;-\infty&#125;^&#123;\infty&#125; e^&#123;-x^2&#125; dx = \sqrt&#123;\pi&#125;</span>
+<span class="hljs-emphasis">$$</span></code></pre>
 
 <h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p>主题内置代码高亮支持，支持多种编程语言：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">```python</span></span><br><span class="line"><span class="code">def fibonacci(n):</span></span><br><span class="line"><span class="code">    if n &lt;= 1:</span></span><br><span class="line"><span class="code">        return n</span></span><br><span class="line"><span class="code">    return fibonacci(n-1) + fibonacci(n-2)</span></span><br><span class="line"><span class="code">```</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs markdown"><span class="hljs-code">```python</span>
+<span class="hljs-code">def fibonacci(n):</span>
+<span class="hljs-code">    if n &lt;= 1:</span>
+<span class="hljs-code">        return n</span>
+<span class="hljs-code">    return fibonacci(n-1) + fibonacci(n-2)</span>
+<span class="hljs-code">```</span></code></pre>
 
 <h3 id="警告框"><a href="#警告框" class="headerlink" title="警告框"></a>警告框</h3><p>使用特殊的 CSS 类创建警告框：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;alert alert-info&quot;</span>&gt;</span></span><br><span class="line">这是一个信息提示框</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;alert alert-warning&quot;</span>&gt;</span></span><br><span class="line">这是一个警告提示框</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;alert alert-success&quot;</span>&gt;</span></span><br><span class="line">这是一个成功提示框</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;alert alert-error&quot;</span>&gt;</span></span><br><span class="line">这是一个错误提示框</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;alert alert-info&quot;</span>&gt;</span>
+这是一个信息提示框
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;alert alert-warning&quot;</span>&gt;</span>
+这是一个警告提示框
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;alert alert-success&quot;</span>&gt;</span>
+这是一个成功提示框
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;alert alert-error&quot;</span>&gt;</span>
+这是一个错误提示框
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 
 <h2 id="📱-响应式设计"><a href="#📱-响应式设计" class="headerlink" title="📱 响应式设计"></a>📱 响应式设计</h2><p>主题采用移动优先的响应式设计：</p>
 <ul>
@@ -385,7 +533,17 @@
 <li>Twitter Card 支持</li>
 <li>自动生成 sitemap</li>
 </ul>
-<h3 id="SEO-配置"><a href="#SEO-配置" class="headerlink" title="SEO 配置"></a>SEO 配置</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># _config.yml</span></span><br><span class="line"><span class="attr">seo:</span></span><br><span class="line">  <span class="comment"># 默认描述</span></span><br><span class="line">  <span class="attr">description:</span> <span class="string">&quot;你的博客描述&quot;</span></span><br><span class="line">  <span class="comment"># 关键词</span></span><br><span class="line">  <span class="attr">keywords:</span> <span class="string">&quot;关键词1, 关键词2, 关键词3&quot;</span></span><br><span class="line">  <span class="comment"># 作者信息</span></span><br><span class="line">  <span class="attr">author:</span> <span class="string">&quot;作者名称&quot;</span></span><br><span class="line">  <span class="comment"># 社交媒体</span></span><br><span class="line">  <span class="attr">twitter_username:</span> <span class="string">&quot;your_twitter&quot;</span></span><br><span class="line">  <span class="attr">facebook_app_id:</span> <span class="string">&quot;your_facebook_app_id&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="SEO-配置"><a href="#SEO-配置" class="headerlink" title="SEO 配置"></a>SEO 配置</h3><pre><code class="hljs yaml"><span class="hljs-comment"># _config.yml</span>
+<span class="hljs-attr">seo:</span>
+  <span class="hljs-comment"># 默认描述</span>
+  <span class="hljs-attr">description:</span> <span class="hljs-string">&quot;你的博客描述&quot;</span>
+  <span class="hljs-comment"># 关键词</span>
+  <span class="hljs-attr">keywords:</span> <span class="hljs-string">&quot;关键词1, 关键词2, 关键词3&quot;</span>
+  <span class="hljs-comment"># 作者信息</span>
+  <span class="hljs-attr">author:</span> <span class="hljs-string">&quot;作者名称&quot;</span>
+  <span class="hljs-comment"># 社交媒体</span>
+  <span class="hljs-attr">twitter_username:</span> <span class="hljs-string">&quot;your_twitter&quot;</span>
+  <span class="hljs-attr">facebook_app_id:</span> <span class="hljs-string">&quot;your_facebook_app_id&quot;</span></code></pre>
 
 <h2 id="🚀-性能优化-1"><a href="#🚀-性能优化-1" class="headerlink" title="🚀 性能优化"></a>🚀 性能优化</h2><h3 id="内置优化"><a href="#内置优化" class="headerlink" title="内置优化"></a>内置优化</h3><ul>
 <li>CSS 和 JavaScript 压缩</li>
@@ -399,12 +557,45 @@
 <li><strong>缓存策略</strong>：配置适当的缓存头</li>
 <li><strong>压缩</strong>：启用 Gzip 压缩</li>
 </ol>
-<h2 id="🛠️-开发指南"><a href="#🛠️-开发指南" class="headerlink" title="🛠️ 开发指南"></a>🛠️ 开发指南</h2><h3 id="本地开发"><a href="#本地开发" class="headerlink" title="本地开发"></a>本地开发</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 克隆主题</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/forhalunhaku/hexo-theme-halunhaku.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line"><span class="built_in">cd</span> hexo-theme-halunhaku</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开发模式</span></span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<h2 id="🛠️-开发指南"><a href="#🛠️-开发指南" class="headerlink" title="🛠️ 开发指南"></a>🛠️ 开发指南</h2><h3 id="本地开发"><a href="#本地开发" class="headerlink" title="本地开发"></a>本地开发</h3><pre><code class="hljs bash"><span class="hljs-comment"># 克隆主题</span>
+git <span class="hljs-built_in">clone</span> https://github.com/forhalunhaku/hexo-theme-halunhaku.git
 
-<h3 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">hexo-theme-halunhaku/</span><br><span class="line">├── layout/                 # 布局文件</span><br><span class="line">│   ├── _partial/          # 部分模板</span><br><span class="line">│   ├── index.ejs          # 首页模板</span><br><span class="line">│   ├── post.ejs           # 文章页模板</span><br><span class="line">│   └── ...</span><br><span class="line">├── source/                # 静态资源</span><br><span class="line">│   ├── css/              # 样式文件</span><br><span class="line">│   ├── js/               # JavaScript 文件</span><br><span class="line">│   └── images/           # 图片资源</span><br><span class="line">├── scripts/              # Hexo 脚本</span><br><span class="line">├── _config.yml           # 主题配置</span><br><span class="line">└── package.json          # 依赖配置</span><br></pre></td></tr></table></figure>
+<span class="hljs-comment"># 安装依赖</span>
+<span class="hljs-built_in">cd</span> hexo-theme-halunhaku
+npm install
+
+<span class="hljs-comment"># 开发模式</span>
+npm run dev</code></pre>
+
+<h3 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h3><pre><code class="hljs nix">hexo-theme-halunhaku<span class="hljs-symbol">/</span>
+├── layout<span class="hljs-symbol">/</span>                 <span class="hljs-comment"># 布局文件</span>
+│   ├── _partial<span class="hljs-symbol">/</span>          <span class="hljs-comment"># 部分模板</span>
+│   ├── index.ejs          <span class="hljs-comment"># 首页模板</span>
+│   ├── post.ejs           <span class="hljs-comment"># 文章页模板</span>
+│   └── ...
+├── source<span class="hljs-symbol">/</span>                <span class="hljs-comment"># 静态资源</span>
+│   ├── css<span class="hljs-symbol">/</span>              <span class="hljs-comment"># 样式文件</span>
+│   ├── js<span class="hljs-symbol">/</span>               <span class="hljs-comment"># JavaScript 文件</span>
+│   └── images<span class="hljs-symbol">/</span>           <span class="hljs-comment"># 图片资源</span>
+├── scripts<span class="hljs-symbol">/</span>              <span class="hljs-comment"># Hexo 脚本</span>
+├── _config.yml           <span class="hljs-comment"># 主题配置</span>
+└── package.json          <span class="hljs-comment"># 依赖配置</span></code></pre>
 
 <h3 id="自定义布局"><a href="#自定义布局" class="headerlink" title="自定义布局"></a>自定义布局</h3><p>创建自定义页面布局：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- layout/custom.ejs --&gt;</span><br><span class="line">&lt;%- partial(&#x27;_partial/head&#x27;) %&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;%- partial(&#x27;_partial/header&#x27;) %&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;main class=&quot;container mx-auto px-4 py-8&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;prose prose-lg mx-auto&quot;&gt;</span><br><span class="line">      &lt;%- body %&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/main&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;%- partial(&#x27;_partial/footer&#x27;) %&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs ejs">&lt;!-- layout/custom.ejs --&gt;
+&lt;%- partial(&#x27;_partial/head&#x27;) %&gt;
+
+&lt;body&gt;
+  &lt;%- partial(&#x27;_partial/header&#x27;) %&gt;
+  
+  &lt;main class=&quot;container mx-auto px-4 py-8&quot;&gt;
+    &lt;div class=&quot;prose prose-lg mx-auto&quot;&gt;
+      &lt;%- body %&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+  
+  &lt;%- partial(&#x27;_partial/footer&#x27;) %&gt;
+&lt;/body&gt;</code></pre>
 
 <h2 id="🤝-贡献指南"><a href="#🤝-贡献指南" class="headerlink" title="🤝 贡献指南"></a>🤝 贡献指南</h2><p>欢迎贡献代码！请遵循以下步骤：</p>
 <ol>
@@ -441,59 +632,77 @@
 <p><strong>Hexo Theme Halunhaku</strong> - 让写作变得更加优雅 ✨</p>
 <p>如果你喜欢这个主题，请给我们一个 ⭐ Star！</p>
 
+          </div>
         </div>
         
         <!-- Post Footer -->
-        <footer class="mt-16 pt-8 border-t border-[var(--border-color)]">
-          <div class="flex flex-wrap gap-2 mb-8">
-            
+        <footer class="mt-16 pt-8 relative">
+          <!-- Decorative divider -->
+          <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent rounded-full"></div>
+          
+          <!-- Enhanced tags section -->
+          <div class="bg-gradient-to-r from-[var(--secondary-color)]/50 to-transparent rounded-2xl p-6 mb-8">
+            <h3 class="text-lg font-semibold mb-4 text-[var(--text-primary-color)] flex items-center gap-2">
+              <svg class="w-5 h-5 text-[var(--primary-color)]" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+              </svg>
+              Tags
+            </h3>
+            <div class="flex flex-wrap gap-3">
               
-                <a href="/tags/Hexo/" 
-                   class="px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-primary-color)] text-sm rounded-full hover:bg-[var(--primary-color)] hover:text-white transition-colors">
-                  Hexo
-                </a>
+                
+                  <a href="/tags/Hexo/" 
+                     class="px-4 py-2 bg-[var(--background-color)] text-[var(--text-primary-color)] text-sm rounded-full border border-[var(--border-color)] hover:bg-[var(--primary-color)] hover:text-white hover:border-[var(--primary-color)] transition-all duration-300 whitespace-nowrap shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                    Hexo
+                  </a>
+                
+                  <a href="/tags/Theme/" 
+                     class="px-4 py-2 bg-[var(--background-color)] text-[var(--text-primary-color)] text-sm rounded-full border border-[var(--border-color)] hover:bg-[var(--primary-color)] hover:text-white hover:border-[var(--primary-color)] transition-all duration-300 whitespace-nowrap shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                    Theme
+                  </a>
+                
+                  <a href="/tags/Blog/" 
+                     class="px-4 py-2 bg-[var(--background-color)] text-[var(--text-primary-color)] text-sm rounded-full border border-[var(--border-color)] hover:bg-[var(--primary-color)] hover:text-white hover:border-[var(--primary-color)] transition-all duration-300 whitespace-nowrap shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                    Blog
+                  </a>
+                
+                  <a href="/tags/Markdown/" 
+                     class="px-4 py-2 bg-[var(--background-color)] text-[var(--text-primary-color)] text-sm rounded-full border border-[var(--border-color)] hover:bg-[var(--primary-color)] hover:text-white hover:border-[var(--primary-color)] transition-all duration-300 whitespace-nowrap shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                    Markdown
+                  </a>
+                
+                  <a href="/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/" 
+                     class="px-4 py-2 bg-[var(--background-color)] text-[var(--text-primary-color)] text-sm rounded-full border border-[var(--border-color)] hover:bg-[var(--primary-color)] hover:text-white hover:border-[var(--primary-color)] transition-all duration-300 whitespace-nowrap shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                    响应式设计
+                  </a>
+                
+                  <a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" 
+                     class="px-4 py-2 bg-[var(--background-color)] text-[var(--text-primary-color)] text-sm rounded-full border border-[var(--border-color)] hover:bg-[var(--primary-color)] hover:text-white hover:border-[var(--primary-color)] transition-all duration-300 whitespace-nowrap shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                    前端开发
+                  </a>
+                
               
-                <a href="/tags/Theme/" 
-                   class="px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-primary-color)] text-sm rounded-full hover:bg-[var(--primary-color)] hover:text-white transition-colors">
-                  Theme
-                </a>
-              
-                <a href="/tags/Blog/" 
-                   class="px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-primary-color)] text-sm rounded-full hover:bg-[var(--primary-color)] hover:text-white transition-colors">
-                  Blog
-                </a>
-              
-                <a href="/tags/Markdown/" 
-                   class="px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-primary-color)] text-sm rounded-full hover:bg-[var(--primary-color)] hover:text-white transition-colors">
-                  Markdown
-                </a>
-              
-                <a href="/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/" 
-                   class="px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-primary-color)] text-sm rounded-full hover:bg-[var(--primary-color)] hover:text-white transition-colors">
-                  响应式设计
-                </a>
-              
-                <a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" 
-                   class="px-3 py-1 bg-[var(--secondary-color)] text-[var(--text-primary-color)] text-sm rounded-full hover:bg-[var(--primary-color)] hover:text-white transition-colors">
-                  前端开发
-                </a>
-              
-            
+            </div>
           </div>
           
-          <!-- Navigation -->
-          <nav class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <!-- Enhanced Navigation -->
+          <nav class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             
-              <div class="hidden sm:block"></div>
+              <div></div>
             
             
             
               <a href="/2025/07/10/creep_cal/" 
-                 class="flex items-center gap-2 text-[var(--primary-color)] hover:underline max-w-full sm:max-w-[45%] sm:text-right">
-                <span class="truncate">Next: 混凝土徐变多模型计算平台 creep_cal 项目介绍</span>
-                <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-                </svg>
+                 class="group p-6 bg-[var(--background-color)] border border-[var(--border-color)] rounded-xl hover:border-[var(--primary-color)] transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 text-right">
+                <div class="flex items-center justify-end gap-3 mb-2">
+                  <span class="text-sm text-[var(--text-secondary-color)] font-medium">Next Article</span>
+                  <svg class="w-5 h-5 text-[var(--primary-color)] group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <h4 class="text-[var(--text-primary-color)] font-semibold group-hover:text-[var(--primary-color)] transition-colors line-clamp-2">
+                  混凝土徐变多模型计算平台 creep_cal 项目介绍
+                </h4>
               </a>
             
           </nav>

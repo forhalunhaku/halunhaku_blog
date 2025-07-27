@@ -75,6 +75,11 @@
   </script>
   
   
+  <!-- Theme CSS -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
   <!-- Theme Colors -->
   <style type="text/tailwindcss">
     :root {
@@ -101,23 +106,29 @@
   
   <!-- Mobile Menu Script -->
   <script src="/js/mobile-menu.js" defer></script>
+  
+  <!-- Code Copy Script -->
+  <script src="/js/code-copy.js" defer></script>
+  
+  <!-- Reading Progress Script -->
+  <script src="/js/reading-progress.js" defer></script>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
   <div class="min-h-screen flex flex-col">
     <header class="sticky top-0 z-10 w-full bg-[var(--background-color)]/80 backdrop-blur-md">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-24 ">
+    <div class="flex items-center justify-between h-16 sm:h-20 lg:h-24 ">
       <!-- Logo and Title -->
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
         
           
             <!-- 自定义Logo -->
             <img src="/images/avatar.png" 
                  alt="halunhaku&#39;s blog" 
-                 class="h-8 w-8 object-contain">
+                 class="h-6 w-6 sm:h-8 sm:w-8 object-contain flex-shrink-0">
           
         
-        <h1 class="text-2xl md:text-3xl font-bold tracking-tight">halunhaku&#39;s blog</h1>
+        <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight truncate">halunhaku&#39;s blog</h1>
       </div>
       
       <!-- Navigation -->
@@ -140,8 +151,8 @@
         </div>
         
         <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-          <button id="mobile-menu-button" class="p-2 rounded-md text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] hover:bg-[var(--secondary-color)] transition-colors">
+        <div class="md:hidden flex-shrink-0">
+          <button id="mobile-menu-button" class="p-3 rounded-md text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] hover:bg-[var(--secondary-color)] transition-colors touch-manipulation">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -171,8 +182,8 @@
   </div>
 </header>
     
-    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         
           <!-- Reusable post card component -->
 <article class="group">
@@ -205,7 +216,7 @@
       </div>
     
     
-    <h2 class="text-2xl font-bold leading-snug tracking-tight mb-2">
+    <h2 class="text-xl sm:text-2xl font-bold leading-snug tracking-tight mb-2">
       <a class="hover:text-[var(--primary-color)] transition-colors" href="/2025/07/26/hexo-theme-halunhaku-guide/">
         Hexo Theme Halunhaku - 现代简约博客主题完整指南
       </a>
@@ -216,11 +227,11 @@
         Jul 26, 2025
       </time>
       <span>•</span>
-      <span>3 min read</span>
+      <span>4 min read</span>
     </div>
   </div>
   
-  <p class="text-[var(--text-secondary-color)] text-lg leading-relaxed">
+  <p class="text-[var(--text-secondary-color)] text-base sm:text-lg leading-relaxed">
     Hexo Theme Halunhaku - 现代简约博客主题一个为 Hexo 博客系统设计的现代化、简约风格主题，专注于优雅的排版和出色的阅读体验。
 ✨ 主题特色🎨 现代设计
 简约美学：干净的界面设计，专注于内容本身
@@ -232,17 +243,17 @@
     <div class="flex flex-wrap gap-2 mt-4">
       
         <a href="/tags/Hexo/" 
-           class="text-xs text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] transition-colors">
+           class="text-xs text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] transition-colors whitespace-nowrap">
           #Hexo
         </a>
       
         <a href="/tags/Theme/" 
-           class="text-xs text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] transition-colors">
+           class="text-xs text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] transition-colors whitespace-nowrap">
           #Theme
         </a>
       
         <a href="/tags/Blog/" 
-           class="text-xs text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] transition-colors">
+           class="text-xs text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] transition-colors whitespace-nowrap">
           #Blog
         </a>
       
@@ -271,7 +282,7 @@
       </div>
     
     
-    <h2 class="text-2xl font-bold leading-snug tracking-tight mb-2">
+    <h2 class="text-xl sm:text-2xl font-bold leading-snug tracking-tight mb-2">
       <a class="hover:text-[var(--primary-color)] transition-colors" href="/2025/07/10/creep_cal/">
         混凝土徐变多模型计算平台 creep_cal 项目介绍
       </a>
@@ -286,7 +297,7 @@
     </div>
   </div>
   
-  <p class="text-[var(--text-secondary-color)] text-lg leading-relaxed">
+  <p class="text-[var(--text-secondary-color)] text-base sm:text-lg leading-relaxed">
     🏗️ 混凝土徐变多模型计算平台 creep_cal
 🚀 一站式徐变计算 · 多模型切换 · 批量导入导出 · 响应式 · 深色模式
 
@@ -300,17 +311,17 @@
     <div class="flex flex-wrap gap-2 mt-4">
       
         <a href="/tags/%E5%B7%A5%E7%A8%8B/" 
-           class="text-xs text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] transition-colors">
+           class="text-xs text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] transition-colors whitespace-nowrap">
           #工程
         </a>
       
         <a href="/tags/%E5%89%8D%E7%AB%AF/" 
-           class="text-xs text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] transition-colors">
+           class="text-xs text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] transition-colors whitespace-nowrap">
           #前端
         </a>
       
         <a href="/tags/%E6%B7%B7%E5%87%9D%E5%9C%9F/" 
-           class="text-xs text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] transition-colors">
+           class="text-xs text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] transition-colors whitespace-nowrap">
           #混凝土
         </a>
       
