@@ -29,7 +29,7 @@
   color: inherit;
 }
 
-/* Headings with modern styling */
+/* Headings with modern styling - optimized for Chinese characters */
 .prose h1,
 .prose h2,
 .prose h3,
@@ -44,6 +44,9 @@
 .prose-lg h6 {
   @apply text-[var(--text-primary-color)] font-bold tracking-tight;
   font-family: 'Newsreader', serif;
+  line-height: 1.4 !important; /* Better for Chinese characters */
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
 }
 
 .prose h1,
@@ -871,6 +874,26 @@ html, body {
 a, span, p {
   word-break: keep-all;
   overflow-wrap: break-word;
+}
+
+/* Fix for Chinese character display in titles */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.4 !important;
+  padding-top: 0.1em !important;
+  padding-bottom: 0.1em !important;
+  word-break: keep-all !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Specific fixes for article titles */
+article h1,
+article h2,
+.post-title,
+.card-title {
+  line-height: 1.5 !important;
+  min-height: 1.5em;
+  display: flex;
+  align-items: center;
 }
 
 /* Mobile optimizations */
