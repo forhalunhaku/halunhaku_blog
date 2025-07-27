@@ -115,6 +115,12 @@
 <link rel="stylesheet" href="/css/style.css">
 
   
+<link rel="stylesheet" href="/css/code-blocks.css">
+
+  
+<link rel="stylesheet" href="/css/cover-images.css">
+
+  
   <!-- Theme Colors -->
   <style type="text/tailwindcss">
     :root {
@@ -347,179 +353,179 @@
 <li><strong>SEO 友好</strong>：完整的 meta 标签和结构化数据</li>
 <li><strong>图片优化</strong>：自动图片懒加载和优化</li>
 </ul>
-<h2 id="🛠️-安装指南"><a href="#🛠️-安装指南" class="headerlink" title="🛠️ 安装指南"></a>🛠️ 安装指南</h2><h3 id="方法一：Git-Clone（推荐）"><a href="#方法一：Git-Clone（推荐）" class="headerlink" title="方法一：Git Clone（推荐）"></a>方法一：Git Clone（推荐）</h3><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> your-hexo-site
-git <span class="hljs-built_in">clone</span> https://github.com/forhalunhaku/hexo-theme-halunhaku.git themes/halunhaku</code></pre>
-
+<h2 id="🛠️-安装指南"><a href="#🛠️-安装指南" class="headerlink" title="🛠️ 安装指南"></a>🛠️ 安装指南</h2><h3 id="方法一：Git-Clone（推荐）"><a href="#方法一：Git-Clone（推荐）" class="headerlink" title="方法一：Git Clone（推荐）"></a>方法一：Git Clone（推荐）</h3><pre><code class="language-bash">cd your-hexo-site
+git clone https://github.com/forhalunhaku/hexo-theme-halunhaku.git themes/halunhaku
+</code></pre>
 <h3 id="方法二：下载压缩包"><a href="#方法二：下载压缩包" class="headerlink" title="方法二：下载压缩包"></a>方法二：下载压缩包</h3><ol>
 <li>从 <a target="_blank" rel="noopener" href="https://github.com/forhalunhaku/hexo-theme-halunhaku/releases">GitHub Releases</a> 下载最新版本</li>
 <li>解压到 <code>themes/halunhaku</code> 目录</li>
 </ol>
 <h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>在你的 Hexo 站点根目录的 <code>_config.yml</code> 中设置：</p>
-<pre><code class="hljs yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">halunhaku</span></code></pre>
-
+<pre><code class="language-yaml">theme: halunhaku
+</code></pre>
 <h2 id="⚙️-配置说明"><a href="#⚙️-配置说明" class="headerlink" title="⚙️ 配置说明"></a>⚙️ 配置说明</h2><h3 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h3><p>复制主题配置文件：</p>
-<pre><code class="hljs bash"><span class="hljs-built_in">cp</span> themes/halunhaku/_config.example.yml themes/halunhaku/_config.yml</code></pre>
+<pre><code class="language-bash">cp themes/halunhaku/_config.example.yml themes/halunhaku/_config.yml
+</code></pre>
+<h3 id="主要配置选项"><a href="#主要配置选项" class="headerlink" title="主要配置选项"></a>主要配置选项</h3><pre><code class="language-yaml"># 站点信息
+site:
+  title: &quot;你的博客标题&quot;
+  subtitle: &quot;博客副标题&quot;
+  description: &quot;博客描述&quot;
+  author: &quot;作者名称&quot;
 
-<h3 id="主要配置选项"><a href="#主要配置选项" class="headerlink" title="主要配置选项"></a>主要配置选项</h3><pre><code class="hljs yaml"><span class="hljs-comment"># 站点信息</span>
-<span class="hljs-attr">site:</span>
-  <span class="hljs-attr">title:</span> <span class="hljs-string">&quot;你的博客标题&quot;</span>
-  <span class="hljs-attr">subtitle:</span> <span class="hljs-string">&quot;博客副标题&quot;</span>
-  <span class="hljs-attr">description:</span> <span class="hljs-string">&quot;博客描述&quot;</span>
-  <span class="hljs-attr">author:</span> <span class="hljs-string">&quot;作者名称&quot;</span>
+# 导航菜单
+menu:
+  首页: /
+  归档: /archives/
+  分类: /categories/
+  标签: /tags/
+  关于: /about/
 
-<span class="hljs-comment"># 导航菜单</span>
-<span class="hljs-attr">menu:</span>
-  <span class="hljs-string">首页:</span> <span class="hljs-string">/</span>
-  <span class="hljs-string">归档:</span> <span class="hljs-string">/archives/</span>
-  <span class="hljs-string">分类:</span> <span class="hljs-string">/categories/</span>
-  <span class="hljs-string">标签:</span> <span class="hljs-string">/tags/</span>
-  <span class="hljs-string">关于:</span> <span class="hljs-string">/about/</span>
+# 社交链接
+social:
+  GitHub: https://github.com/yourusername
+  Twitter: https://twitter.com/yourusername
+  Email: mailto:your@email.com
 
-<span class="hljs-comment"># 社交链接</span>
-<span class="hljs-attr">social:</span>
-  <span class="hljs-attr">GitHub:</span> <span class="hljs-string">https://github.com/yourusername</span>
-  <span class="hljs-attr">Twitter:</span> <span class="hljs-string">https://twitter.com/yourusername</span>
-  <span class="hljs-attr">Email:</span> <span class="hljs-string">mailto:your@email.com</span>
-
-<span class="hljs-comment"># 颜色方案</span>
-<span class="hljs-attr">color_schemes:</span>
-  <span class="hljs-attr">home:</span>
-    <span class="hljs-attr">primary_color:</span> <span class="hljs-string">&quot;#0c7ff2&quot;</span>
-    <span class="hljs-attr">secondary_color:</span> <span class="hljs-string">&quot;#f8fafc&quot;</span>
-    <span class="hljs-attr">background_color:</span> <span class="hljs-string">&quot;#ffffff&quot;</span>
-    <span class="hljs-attr">text_primary_color:</span> <span class="hljs-string">&quot;#1f2937&quot;</span>
-    <span class="hljs-attr">text_secondary_color:</span> <span class="hljs-string">&quot;#6b7280&quot;</span>
-    <span class="hljs-attr">border_color:</span> <span class="hljs-string">&quot;#e5e7eb&quot;</span>
+# 颜色方案
+color_schemes:
+  home:
+    primary_color: &quot;#0c7ff2&quot;
+    secondary_color: &quot;#f8fafc&quot;
+    background_color: &quot;#ffffff&quot;
+    text_primary_color: &quot;#1f2937&quot;
+    text_secondary_color: &quot;#6b7280&quot;
+    border_color: &quot;#e5e7eb&quot;
   
-  <span class="hljs-attr">post:</span>
-    <span class="hljs-attr">primary_color:</span> <span class="hljs-string">&quot;#0c7ff2&quot;</span>
-    <span class="hljs-attr">secondary_color:</span> <span class="hljs-string">&quot;#f1f5f9&quot;</span>
-    <span class="hljs-attr">background_color:</span> <span class="hljs-string">&quot;#ffffff&quot;</span>
-    <span class="hljs-attr">text_primary_color:</span> <span class="hljs-string">&quot;#0f172a&quot;</span>
-    <span class="hljs-attr">text_secondary_color:</span> <span class="hljs-string">&quot;#475569&quot;</span>
-    <span class="hljs-attr">border_color:</span> <span class="hljs-string">&quot;#cbd5e1&quot;</span>
+  post:
+    primary_color: &quot;#0c7ff2&quot;
+    secondary_color: &quot;#f1f5f9&quot;
+    background_color: &quot;#ffffff&quot;
+    text_primary_color: &quot;#0f172a&quot;
+    text_secondary_color: &quot;#475569&quot;
+    border_color: &quot;#cbd5e1&quot;
 
-<span class="hljs-comment"># 功能开关</span>
-<span class="hljs-attr">features:</span>
-  <span class="hljs-comment"># 代码高亮</span>
-  <span class="hljs-attr">highlight:</span> <span class="hljs-literal">true</span>
-  <span class="hljs-comment"># 数学公式</span>
-  <span class="hljs-attr">math:</span> <span class="hljs-literal">false</span>
-  <span class="hljs-comment"># 图片懒加载</span>
-  <span class="hljs-attr">lazyload:</span> <span class="hljs-literal">true</span>
-  <span class="hljs-comment"># 阅读进度条</span>
-  <span class="hljs-attr">reading_progress:</span> <span class="hljs-literal">true</span></code></pre>
-
+# 功能开关
+features:
+  # 代码高亮
+  highlight: true
+  # 数学公式
+  math: false
+  # 图片懒加载
+  lazyload: true
+  # 阅读进度条
+  reading_progress: true
+</code></pre>
 <h2 id="🎨-自定义样式"><a href="#🎨-自定义样式" class="headerlink" title="🎨 自定义样式"></a>🎨 自定义样式</h2><h3 id="颜色主题"><a href="#颜色主题" class="headerlink" title="颜色主题"></a>颜色主题</h3><p>主题支持完全自定义的颜色方案。你可以为不同页面类型设置不同的颜色：</p>
-<pre><code class="hljs yaml"><span class="hljs-attr">color_schemes:</span>
-  <span class="hljs-comment"># 首页颜色</span>
-  <span class="hljs-attr">home:</span>
-    <span class="hljs-attr">primary_color:</span> <span class="hljs-string">&quot;#your-color&quot;</span>
-    <span class="hljs-comment"># ... 其他颜色</span>
+<pre><code class="language-yaml">color_schemes:
+  # 首页颜色
+  home:
+    primary_color: &quot;#your-color&quot;
+    # ... 其他颜色
   
-  <span class="hljs-comment"># 文章页颜色</span>
-  <span class="hljs-attr">post:</span>
-    <span class="hljs-attr">primary_color:</span> <span class="hljs-string">&quot;#your-color&quot;</span>
-    <span class="hljs-comment"># ... 其他颜色</span>
+  # 文章页颜色
+  post:
+    primary_color: &quot;#your-color&quot;
+    # ... 其他颜色
   
-  <span class="hljs-comment"># 归档页颜色</span>
-  <span class="hljs-attr">archive:</span>
-    <span class="hljs-attr">primary_color:</span> <span class="hljs-string">&quot;#your-color&quot;</span>
-    <span class="hljs-comment"># ... 其他颜色</span></code></pre>
-
+  # 归档页颜色
+  archive:
+    primary_color: &quot;#your-color&quot;
+    # ... 其他颜色
+</code></pre>
 <h3 id="自定义-CSS"><a href="#自定义-CSS" class="headerlink" title="自定义 CSS"></a>自定义 CSS</h3><p>在 <code>themes/halunhaku/source/css/</code> 目录下创建 <code>custom.css</code>：</p>
-<pre><code class="hljs css"><span class="hljs-comment">/* 自定义样式 */</span>
-<span class="hljs-selector-class">.custom-class</span> &#123;
-  <span class="hljs-comment">/* 你的样式 */</span>
-&#125;</code></pre>
-
+<pre><code class="language-css">/* 自定义样式 */
+.custom-class &#123;
+  /* 你的样式 */
+&#125;
+</code></pre>
 <h2 id="📝-写作指南"><a href="#📝-写作指南" class="headerlink" title="📝 写作指南"></a>📝 写作指南</h2><h3 id="Markdown-支持"><a href="#Markdown-支持" class="headerlink" title="Markdown 支持"></a>Markdown 支持</h3><p>主题完全支持标准 Markdown 语法，并提供了增强的样式：</p>
-<h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><pre><code class="hljs markdown"><span class="hljs-section"># 一级标题</span>
-<span class="hljs-section">## 二级标题</span>
-<span class="hljs-section">### 三级标题</span></code></pre>
-
-<h4 id="强调文本"><a href="#强调文本" class="headerlink" title="强调文本"></a>强调文本</h4><pre><code class="hljs markdown"><span class="hljs-strong">**粗体文本**</span>
-<span class="hljs-emphasis">*斜体文本*</span>
+<h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><pre><code class="language-markdown"># 一级标题
+## 二级标题
+### 三级标题
+</code></pre>
+<h4 id="强调文本"><a href="#强调文本" class="headerlink" title="强调文本"></a>强调文本</h4><pre><code class="language-markdown">**粗体文本**
+*斜体文本*
 ~~删除线~~
-==高亮文本==</code></pre>
+==高亮文本==
+</code></pre>
+<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><pre><code class="language-markdown">- 无序列表项 1
+- 无序列表项 2
+  - 嵌套列表项
 
-<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><pre><code class="hljs markdown"><span class="hljs-bullet">-</span> 无序列表项 1
-<span class="hljs-bullet">-</span> 无序列表项 2
-<span class="hljs-bullet">  -</span> 嵌套列表项
-
-<span class="hljs-bullet">1.</span> 有序列表项 1
-<span class="hljs-bullet">2.</span> 有序列表项 2</code></pre>
-
-<h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><pre><code class="hljs markdown"><span class="hljs-bullet">-</span> [x] 已完成任务
-<span class="hljs-bullet">-</span> [ ] 未完成任务</code></pre>
-
-<h4 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h4><pre><code class="hljs markdown"><span class="hljs-quote">&gt; 这是一个引用块</span>
-<span class="hljs-quote">&gt; 支持多行引用</span></code></pre>
-
-<h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h4><pre><code class="hljs markdown"><span class="hljs-code">```javascript</span>
-<span class="hljs-code">function hello() &#123;</span>
-<span class="hljs-code">  console.log(&quot;Hello, World!&quot;);</span>
-<span class="hljs-code">&#125;</span>
-<span class="hljs-code">```</span></code></pre>
-
-<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><pre><code class="hljs markdown">| 列1 | 列2 | 列3 |
+1. 有序列表项 1
+2. 有序列表项 2
+</code></pre>
+<h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><pre><code class="language-markdown">- [x] 已完成任务
+- [ ] 未完成任务
+</code></pre>
+<h4 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h4><pre><code class="language-markdown">&gt; 这是一个引用块
+&gt; 支持多行引用
+</code></pre>
+<h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h4><pre><code class="language-markdown">```javascript
+function hello() &#123;
+  console.log(&quot;Hello, World!&quot;);
+&#125;
+```
+</code></pre>
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><pre><code class="language-markdown">| 列1 | 列2 | 列3 |
 |-----|-----|-----|
-| 数据1 | 数据2 | 数据3 |</code></pre>
-
-<h4 id="链接和图片"><a href="#链接和图片" class="headerlink" title="链接和图片"></a>链接和图片</h4><pre><code class="hljs markdown">[<span class="hljs-string">链接文本</span>](<span class="hljs-link">https://example.com</span>)
-![<span class="hljs-string">图片描述</span>](<span class="hljs-link">image-url.jpg</span>)</code></pre>
-
+| 数据1 | 数据2 | 数据3 |
+</code></pre>
+<h4 id="链接和图片"><a href="#链接和图片" class="headerlink" title="链接和图片"></a>链接和图片</h4><pre><code class="language-markdown">[链接文本](https://example.com)
+![图片描述](image-url.jpg)
+</code></pre>
 <h3 id="Front-Matter"><a href="#Front-Matter" class="headerlink" title="Front Matter"></a>Front Matter</h3><p>文章头部信息示例：</p>
-<pre><code class="hljs yaml"><span class="hljs-meta">---</span>
-<span class="hljs-attr">title:</span> <span class="hljs-string">&quot;文章标题&quot;</span>
-<span class="hljs-attr">date:</span> <span class="hljs-number">2024-01-01 12:00:00</span>
-<span class="hljs-attr">categories:</span>
-  <span class="hljs-bullet">-</span> <span class="hljs-string">分类名称</span>
-<span class="hljs-attr">tags:</span>
-  <span class="hljs-bullet">-</span> <span class="hljs-string">标签1</span>
-  <span class="hljs-bullet">-</span> <span class="hljs-string">标签2</span>
-<span class="hljs-attr">description:</span> <span class="hljs-string">&quot;文章描述&quot;</span>
-<span class="hljs-attr">cover:</span> <span class="hljs-string">&quot;封面图片URL&quot;</span>
-<span class="hljs-meta">---</span></code></pre>
-
+<pre><code class="language-yaml">---
+title: &quot;文章标题&quot;
+date: 2024-01-01 12:00:00
+categories:
+  - 分类名称
+tags:
+  - 标签1
+  - 标签2
+description: &quot;文章描述&quot;
+cover: &quot;封面图片URL&quot;
+---
+</code></pre>
 <h2 id="🔧-高级功能"><a href="#🔧-高级功能" class="headerlink" title="🔧 高级功能"></a>🔧 高级功能</h2><h3 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h3><p>启用数学公式支持：</p>
-<pre><code class="hljs yaml"><span class="hljs-comment"># _config.yml</span>
-<span class="hljs-attr">features:</span>
-  <span class="hljs-attr">math:</span> <span class="hljs-literal">true</span></code></pre>
-
+<pre><code class="language-yaml"># _config.yml
+features:
+  math: true
+</code></pre>
 <p>使用示例：</p>
-<pre><code class="hljs markdown">行内公式：$E = mc^2$
+<pre><code class="language-markdown">行内公式：$E = mc^2$
 
 块级公式：
 $$
-\int<span class="hljs-emphasis">_&#123;-\infty&#125;^&#123;\infty&#125; e^&#123;-x^2&#125; dx = \sqrt&#123;\pi&#125;</span>
-<span class="hljs-emphasis">$$</span></code></pre>
-
+\int_&#123;-\infty&#125;^&#123;\infty&#125; e^&#123;-x^2&#125; dx = \sqrt&#123;\pi&#125;
+$$
+</code></pre>
 <h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p>主题内置代码高亮支持，支持多种编程语言：</p>
-<pre><code class="hljs markdown"><span class="hljs-code">```python</span>
-<span class="hljs-code">def fibonacci(n):</span>
-<span class="hljs-code">    if n &lt;= 1:</span>
-<span class="hljs-code">        return n</span>
-<span class="hljs-code">    return fibonacci(n-1) + fibonacci(n-2)</span>
-<span class="hljs-code">```</span></code></pre>
-
+<pre><code class="language-markdown">```python
+def fibonacci(n):
+    if n &lt;= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+```
+</code></pre>
 <h3 id="警告框"><a href="#警告框" class="headerlink" title="警告框"></a>警告框</h3><p>使用特殊的 CSS 类创建警告框：</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;alert alert-info&quot;</span>&gt;</span>
+<pre><code class="language-html">&lt;div class=&quot;alert alert-info&quot;&gt;
 这是一个信息提示框
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+&lt;/div&gt;
 
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;alert alert-warning&quot;</span>&gt;</span>
+&lt;div class=&quot;alert alert-warning&quot;&gt;
 这是一个警告提示框
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+&lt;/div&gt;
 
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;alert alert-success&quot;</span>&gt;</span>
+&lt;div class=&quot;alert alert-success&quot;&gt;
 这是一个成功提示框
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+&lt;/div&gt;
 
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;alert alert-error&quot;</span>&gt;</span>
+&lt;div class=&quot;alert alert-error&quot;&gt;
 这是一个错误提示框
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
-
+&lt;/div&gt;
+</code></pre>
 <h2 id="📱-响应式设计"><a href="#📱-响应式设计" class="headerlink" title="📱 响应式设计"></a>📱 响应式设计</h2><p>主题采用移动优先的响应式设计：</p>
 <ul>
 <li><strong>桌面端</strong>：≥1024px - 完整布局</li>
@@ -533,18 +539,18 @@ $$
 <li>Twitter Card 支持</li>
 <li>自动生成 sitemap</li>
 </ul>
-<h3 id="SEO-配置"><a href="#SEO-配置" class="headerlink" title="SEO 配置"></a>SEO 配置</h3><pre><code class="hljs yaml"><span class="hljs-comment"># _config.yml</span>
-<span class="hljs-attr">seo:</span>
-  <span class="hljs-comment"># 默认描述</span>
-  <span class="hljs-attr">description:</span> <span class="hljs-string">&quot;你的博客描述&quot;</span>
-  <span class="hljs-comment"># 关键词</span>
-  <span class="hljs-attr">keywords:</span> <span class="hljs-string">&quot;关键词1, 关键词2, 关键词3&quot;</span>
-  <span class="hljs-comment"># 作者信息</span>
-  <span class="hljs-attr">author:</span> <span class="hljs-string">&quot;作者名称&quot;</span>
-  <span class="hljs-comment"># 社交媒体</span>
-  <span class="hljs-attr">twitter_username:</span> <span class="hljs-string">&quot;your_twitter&quot;</span>
-  <span class="hljs-attr">facebook_app_id:</span> <span class="hljs-string">&quot;your_facebook_app_id&quot;</span></code></pre>
-
+<h3 id="SEO-配置"><a href="#SEO-配置" class="headerlink" title="SEO 配置"></a>SEO 配置</h3><pre><code class="language-yaml"># _config.yml
+seo:
+  # 默认描述
+  description: &quot;你的博客描述&quot;
+  # 关键词
+  keywords: &quot;关键词1, 关键词2, 关键词3&quot;
+  # 作者信息
+  author: &quot;作者名称&quot;
+  # 社交媒体
+  twitter_username: &quot;your_twitter&quot;
+  facebook_app_id: &quot;your_facebook_app_id&quot;
+</code></pre>
 <h2 id="🚀-性能优化-1"><a href="#🚀-性能优化-1" class="headerlink" title="🚀 性能优化"></a>🚀 性能优化</h2><h3 id="内置优化"><a href="#内置优化" class="headerlink" title="内置优化"></a>内置优化</h3><ul>
 <li>CSS 和 JavaScript 压缩</li>
 <li>图片懒加载</li>
@@ -557,36 +563,36 @@ $$
 <li><strong>缓存策略</strong>：配置适当的缓存头</li>
 <li><strong>压缩</strong>：启用 Gzip 压缩</li>
 </ol>
-<h2 id="🛠️-开发指南"><a href="#🛠️-开发指南" class="headerlink" title="🛠️ 开发指南"></a>🛠️ 开发指南</h2><h3 id="本地开发"><a href="#本地开发" class="headerlink" title="本地开发"></a>本地开发</h3><pre><code class="hljs bash"><span class="hljs-comment"># 克隆主题</span>
-git <span class="hljs-built_in">clone</span> https://github.com/forhalunhaku/hexo-theme-halunhaku.git
+<h2 id="🛠️-开发指南"><a href="#🛠️-开发指南" class="headerlink" title="🛠️ 开发指南"></a>🛠️ 开发指南</h2><h3 id="本地开发"><a href="#本地开发" class="headerlink" title="本地开发"></a>本地开发</h3><pre><code class="language-bash"># 克隆主题
+git clone https://github.com/forhalunhaku/hexo-theme-halunhaku.git
 
-<span class="hljs-comment"># 安装依赖</span>
-<span class="hljs-built_in">cd</span> hexo-theme-halunhaku
+# 安装依赖
+cd hexo-theme-halunhaku
 npm install
 
-<span class="hljs-comment"># 开发模式</span>
-npm run dev</code></pre>
-
-<h3 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h3><pre><code class="hljs nix">hexo-theme-halunhaku<span class="hljs-symbol">/</span>
-├── layout<span class="hljs-symbol">/</span>                 <span class="hljs-comment"># 布局文件</span>
-│   ├── _partial<span class="hljs-symbol">/</span>          <span class="hljs-comment"># 部分模板</span>
-│   ├── index.ejs          <span class="hljs-comment"># 首页模板</span>
-│   ├── post.ejs           <span class="hljs-comment"># 文章页模板</span>
+# 开发模式
+npm run dev
+</code></pre>
+<h3 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h3><pre><code>hexo-theme-halunhaku/
+├── layout/                 # 布局文件
+│   ├── _partial/          # 部分模板
+│   ├── index.ejs          # 首页模板
+│   ├── post.ejs           # 文章页模板
 │   └── ...
-├── source<span class="hljs-symbol">/</span>                <span class="hljs-comment"># 静态资源</span>
-│   ├── css<span class="hljs-symbol">/</span>              <span class="hljs-comment"># 样式文件</span>
-│   ├── js<span class="hljs-symbol">/</span>               <span class="hljs-comment"># JavaScript 文件</span>
-│   └── images<span class="hljs-symbol">/</span>           <span class="hljs-comment"># 图片资源</span>
-├── scripts<span class="hljs-symbol">/</span>              <span class="hljs-comment"># Hexo 脚本</span>
-├── _config.yml           <span class="hljs-comment"># 主题配置</span>
-└── package.json          <span class="hljs-comment"># 依赖配置</span></code></pre>
-
+├── source/                # 静态资源
+│   ├── css/              # 样式文件
+│   ├── js/               # JavaScript 文件
+│   └── images/           # 图片资源
+├── scripts/              # Hexo 脚本
+├── _config.yml           # 主题配置
+└── package.json          # 依赖配置
+</code></pre>
 <h3 id="自定义布局"><a href="#自定义布局" class="headerlink" title="自定义布局"></a>自定义布局</h3><p>创建自定义页面布局：</p>
-<pre><code class="hljs ejs">&lt;!-- layout/custom.ejs --&gt;
-&lt;%- partial(&#x27;_partial/head&#x27;) %&gt;
+<pre><code class="language-ejs">&lt;!-- layout/custom.ejs --&gt;
+&lt;%- partial(&#39;_partial/head&#39;) %&gt;
 
 &lt;body&gt;
-  &lt;%- partial(&#x27;_partial/header&#x27;) %&gt;
+  &lt;%- partial(&#39;_partial/header&#39;) %&gt;
   
   &lt;main class=&quot;container mx-auto px-4 py-8&quot;&gt;
     &lt;div class=&quot;prose prose-lg mx-auto&quot;&gt;
@@ -594,9 +600,9 @@ npm run dev</code></pre>
     &lt;/div&gt;
   &lt;/main&gt;
   
-  &lt;%- partial(&#x27;_partial/footer&#x27;) %&gt;
-&lt;/body&gt;</code></pre>
-
+  &lt;%- partial(&#39;_partial/footer&#39;) %&gt;
+&lt;/body&gt;
+</code></pre>
 <h2 id="🤝-贡献指南"><a href="#🤝-贡献指南" class="headerlink" title="🤝 贡献指南"></a>🤝 贡献指南</h2><p>欢迎贡献代码！请遵循以下步骤：</p>
 <ol>
 <li>Fork 项目</li>
