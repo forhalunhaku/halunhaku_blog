@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>halunhaku&#39;s blog</title>
+  <icon>https://blog.halunhaku.top/icon.png</icon>
+  
+  <link href="https://blog.halunhaku.top/atom.xml" rel="self"/>
+  
+  <link href="https://blog.halunhaku.top/"/>
+  <updated>2025-09-06T15:27:07.704Z</updated>
+  <id>https://blog.halunhaku.top/</id>
+  
+  <author>
+    <name>halunhaku</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo主题优化与发布工作总结 - v2.1.0到v2.1.1完整历程</title>
+    <link href="https://blog.halunhaku.top/2025/08/23/hexo-theme-optimization-and-release-summary/"/>
+    <id>https://blog.halunhaku.top/2025/08/23/hexo-theme-optimization-and-release-summary/</id>
+    <published>2025-08-23T04:40:14.000Z</published>
+    <updated>2025-09-06T15:27:07.704Z</updated>
+    
+    
+    <summary type="html">详细记录了今天在Hexo主题halunhaku上进行的重大优化工作，包括导航栏增强、移动端体验改进、发布流程完善，以及从v2.1.0到v2.1.1的完整发布历程。</summary>
+    
+    
+    
+    <category term="hexo" scheme="https://blog.halunhaku.top/categories/hexo/"/>
+    
+    
+    <category term="Hexo" scheme="https://blog.halunhaku.top/tags/Hexo/"/>
+    
+    <category term="主题开发" scheme="https://blog.halunhaku.top/tags/%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="NPM发布" scheme="https://blog.halunhaku.top/tags/NPM%E5%8F%91%E5%B8%83/"/>
+    
+    <category term="博客优化" scheme="https://blog.halunhaku.top/tags/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo Theme Halunhaku - 现代简约博客主题完整指南</title>
+    <link href="https://blog.halunhaku.top/2025/07/26/hexo-theme-halunhaku-guide/"/>
+    <id>https://blog.halunhaku.top/2025/07/26/hexo-theme-halunhaku-guide/</id>
+    <published>2025-07-26T02:00:00.000Z</published>
+    <updated>2025-07-26T02:00:00.000Z</updated>
+    
+    
+    <summary type="html">Hexo Theme Halunhaku 是一个现代化、简约风格的博客主题，专注于优雅的排版和出色的阅读体验。本文提供完整的安装、配置和使用指南。</summary>
+    
+    
+    
+    <category term="Hexo" scheme="https://blog.halunhaku.top/categories/Hexo/"/>
+    
+    
+    <category term="Hexo" scheme="https://blog.halunhaku.top/tags/Hexo/"/>
+    
+    <category term="Theme" scheme="https://blog.halunhaku.top/tags/Theme/"/>
+    
+    <category term="Blog" scheme="https://blog.halunhaku.top/tags/Blog/"/>
+    
+    <category term="Markdown" scheme="https://blog.halunhaku.top/tags/Markdown/"/>
+    
+    <category term="响应式设计" scheme="https://blog.halunhaku.top/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="前端开发" scheme="https://blog.halunhaku.top/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>混凝土徐变多模型计算平台 creep_cal 项目介绍</title>
+    <link href="https://blog.halunhaku.top/2025/07/10/creep_cal/"/>
+    <id>https://blog.halunhaku.top/2025/07/10/creep_cal/</id>
+    <published>2025-07-10T08:00:00.000Z</published>
+    <updated>2025-09-06T15:27:07.703Z</updated>
+    
+    
+    <summary type="html">
+# 🏗️ 混凝土徐变多模型计算平台 creep_cal
+
+&gt; 🚀 一站式徐变计算 · 多模型切换 · 批量导入导出 · 响应式 · 深色模式
+
+[![GitHub stars](https://img.shields.io/github/stars/forhalunhaku/creep_cal?style=social)](https://github.com/forhalunhaku/creep_cal)
+[![在线体验](https://img.shields.io/badge/在线体验-creep.halunhaku.top-brightgreen)](https://creep.halunhaku.top)
+
+---
+
+## 项目简介
+
+[creep_cal](https://github.com/forhalunhaku/creep_cal) 是一个集成 ACI209、MC2010、B4、B4S 四大主流混凝土徐变模型的多功能计算平台，支持单点/批量计算、Excel/CSV 导入导出、结果可视化，适用于科研、工程设计与教学。
+
+**在线体验地址**：[creep.halunhaku.top](https://creep.halunhaku.top)
+
+&lt;p class=&quot;read-more-link&quot;&gt;&lt;a href=&quot;/2025/07/10/creep_cal/&quot;&gt;阅读更多 →&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="项目" scheme="https://blog.halunhaku.top/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="工程" scheme="https://blog.halunhaku.top/tags/%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="前端" scheme="https://blog.halunhaku.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="混凝土" scheme="https://blog.halunhaku.top/tags/%E6%B7%B7%E5%87%9D%E5%9C%9F/"/>
+    
+    <category term="计算平台" scheme="https://blog.halunhaku.top/tags/%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0/"/>
+    
+  </entry>
+  
+</feed>
