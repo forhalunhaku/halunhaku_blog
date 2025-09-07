@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.halunhaku.top/about/index.html</loc>
+    
+    <lastmod>2025-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.halunhaku.top/tags/index.html</loc>
     
     <lastmod>2025-09-07</lastmod>
@@ -30,15 +39,6 @@
   
   <url>
     <loc>https://blog.halunhaku.top/2025/08/23/hexo-theme-optimization-and-release-summary/</loc>
-    
-    <lastmod>2025-09-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.halunhaku.top/about/index.html</loc>
     
     <lastmod>2025-09-06</lastmod>
     
